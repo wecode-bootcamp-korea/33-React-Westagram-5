@@ -32,8 +32,8 @@ import MainHaimNam from './pages/HaimNam/Main/Main';
 <Route path='/login-yoonji' element={<LoginJongTaek />} />
 <Route path='/main-yoonji' element={<MainJongTaek />} />
 
-<Route path='/login-Jaesung' element={<LoginHaimNam />} />
-<Route path='/main-Jaesung' element={<MainHaimNam  />} />
+<Route path='/login-Jaesung' element={<Loginjaesung />} />
+<Route path='/main-Jaesung' element={<Loginjaesung  />} />
 
 <Route path='/login-KaYoung' element={<LoginHaimNam />} />
 <Route path='/main-KaYoung' element={<MainHaimNam  />} />
@@ -41,14 +41,17 @@ import MainHaimNam from './pages/HaimNam/Main/Main';
 */
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/KaYoung/Login/Login';
-import Main from './pages/KaYoung/Main/Main';
+import Loginjaesung from './pages/JaeSung/Login/Login';
+import Mainjaesung from './pages/JaeSung/Main/Main';
+// import Login from './pages/KaYoung/Login/Login';
+// import Main from './pages/KaYoung/Main/Main';
+
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/login-Jaesung" element={<Loginjaesung />} />
+        <Route path="/main-Jaesung" element={<Mainjaesung />} />
       </Routes>
     </BrowserRouter>
   );
