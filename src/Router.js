@@ -41,14 +41,14 @@ import MainHaimNam from './pages/HaimNam/Main/Main';
 */
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/KaYoung/Login/Login';
-import Main from './pages/KaYoung/Main/Main';
+import LoginKaYoung from './pages/KaYoung/Login/LoginKaYoung';
+import MainKaYoung from './pages/KaYoung/Main/MainKaYoung';
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/login-kayoung" element={<LoginKaYoung />} />
+        <Route path="/main-kayoung" element={<MainKaYoung />} />
       </Routes>
     </BrowserRouter>
   );

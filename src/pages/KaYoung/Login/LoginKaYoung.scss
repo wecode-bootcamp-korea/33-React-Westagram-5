@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.login_ky {
+  body {
+    background-color: #fafafa;
+  }
+
+  .westaWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.5rem auto;
+    padding: 10px 0px;
+    width: 670px;
+    height: 700px;
+    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+
+    .westa {
+      background-color: #ffffff;
+      font-family: 'Lobster', cursive;
+      color: #24292f;
+      font-size: 4.6rem;
+      font-weight: 400;
+      text-align: center;
+      line-height: 4rem;
+      letter-spacing: -1px;
+      margin-top: 3rem;
+      margin-bottom: 80px;
+    }
+  }
+
+  form {
+    width: 76%;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    .login_id {
+      box-sizing: border-box;
+      border: 1px solid #dcdcdc;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      padding-left: 12px;
+      height: 70px;
+      font-size: 20px;
+      font-weight: 600;
+      color: rgb(180, 180, 180);
+      background-color: #fafafa;
+      &::placeholder {
+        color: rgb(180, 179, 179);
+      }
+    }
+    input.login_pw {
+      box-sizing: border-box;
+      border: 1px solid #dcdcdc;
+      margin-bottom: 24px;
+      border-radius: 3px;
+      padding-left: 12px;
+      height: 70px;
+      font-size: 20px;
+      font-weight: 600;
+      background-color: #fafafa;
+
+      &::placeholder {
+        color: rgb(180, 179, 179);
+      }
+    }
+
+    .main_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      margin-bottom: 230px;
+      border-radius: 5px;
+      padding-left: 10px;
+      height: 55px;
+      background-color: #afdcf9;
+
+      .login_btn1 {
+        font-weight: bold;
+        color: white;
+        font-size: 23px;
+        border: 1px solid transparent;
+        background-color: transparent;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #385185;
+  }
+}
