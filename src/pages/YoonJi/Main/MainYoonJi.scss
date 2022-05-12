@@ -1,0 +1,328 @@
+.bold {
+  font-weight: bold;
+}
+
+.btn__right {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+/* Navigation */
+nav {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  border-bottom: 1px solid var(--main-border) !important;
+  padding: 45px !important;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  .icon--left {
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon--left__img {
+      border-right: 1px solid black;
+      padding-right: 15px;
+      margin-right: 10px;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .icon--middle {
+    display: flex;
+    position: relative;
+    width: 40%;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    color: lightgray;
+    border-radius: 4px;
+    border: 1px solid var(--main-border);
+    background-color: var(--background-color);
+    position: relative;
+    width: 100%;
+    &::placeholder {
+      text-align: center;
+      vertical-align: middle;
+      font-size: 15px;
+    }
+  }
+  .fa-search {
+    position: absolute;
+    right: 50px;
+    top: 10px;
+  }
+  .icon--right img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+}
+
+/* Main */
+main {
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+/* Feeds */
+article {
+  width: 700px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+  /* User */
+  .user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border: 1px solid var(--main-border);
+    .profile__container {
+      display: flex;
+      align-items: center;
+      .myprofile {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  /* Photo */
+  .photo img {
+    width: 700px;
+    height: 750px;
+    object-fit: cover;
+  }
+}
+
+/* Reaction */
+.reaction__container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid var(--main-border);
+  .reaction {
+    display: flex;
+    width: 100%;
+    padding: var(--main-padding);
+    font-size: 25px;
+    justify-content: space-between;
+    .reaction__left i {
+      margin-right: 5px;
+    }
+    .fa-heart {
+      color: red;
+    }
+  }
+  /* Like */
+  .like {
+    padding: var(--main-padding);
+    display: flex;
+    align-items: center;
+    .like__profile {
+      margin-right: 10px;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .like__text span {
+      font-weight: bold;
+    }
+  }
+  /* Feeds Text */
+  .feeds__text {
+    padding: var(--main-padding);
+    span {
+      font-weight: bold;
+    }
+  }
+  /* Time */
+  .time {
+    width: 100%;
+    padding: var(--main-padding);
+  }
+  /* Reply */
+  .reply {
+    width: 100%;
+    padding-left: 10px;
+    position: relative;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* Reply__input */
+.reply__input {
+  width: 100%;
+  display: flex;
+  border: 1px solid var(--main-border);
+  button {
+    border: none;
+    background-color: transparent;
+  }
+  .reply__input__text {
+    width: 80%;
+    height: 50px;
+    border: none;
+    padding: 0px 10px;
+    font-size: 15px;
+    &::placeholder {
+      color: lightslategray;
+    }
+  }
+  .reply__input__btn {
+    width: 20%;
+    height: 50px;
+    color: skyblue;
+    background-color: white;
+    border: none;
+    font-size: 15px;
+  }
+}
+
+/* aside */
+.main-right {
+  padding: 0 50px;
+  width: 500px;
+  height: 1000px;
+  margin-top: -120px;
+  /* Personal feeds */
+  .yourId {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .yourId__profile {
+      margin-right: 20px;
+      img {
+        width: 80px;
+        border-radius: 50%;
+      }
+    }
+    .yourId__name {
+      margin-bottom: 20px;
+      .yourId__id {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .yourId__place {
+        font-size: 23px;
+        color: gray;
+      }
+    }
+  }
+}
+
+/* Story */
+.story__container {
+  border: 1px solid lightgray;
+  height: 330px;
+  overflow-y: scroll;
+  padding: 20px;
+  margin-bottom: 20px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.stroy__subject {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 15px;
+  .story__name {
+    color: gray;
+  }
+  .story__view {
+    font-weight: bold;
+  }
+}
+
+.story__profile__box {
+  display: flex;
+  justify-content: space-between;
+  .story__profile {
+    display: flex;
+    .story__profile__avartar {
+      border: 1px solid crimson;
+      border-radius: 50%;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+      }
+    }
+    .story__profile__container {
+      width: 100%;
+      .story__profile__id {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+/* Recommendation */
+.recommendation {
+  padding: 20px;
+  border: 1px solid lightgray;
+  .recommendation__img {
+    border-radius: 50%;
+  }
+  .recommendation__follow {
+    color: #3897f0;
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    justify-content: right;
+    padding-top: 10px;
+    margin-left: 0;
+  }
+}
+
+/* Tags */
+.tags {
+  color: lightgray;
+  margin: 30px 0;
+  padding-right: 30px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/* Copyright */
+.copyright {
+  color: gray;
+}
