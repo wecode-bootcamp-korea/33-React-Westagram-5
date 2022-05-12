@@ -1,8 +1,8 @@
-import './Main.scss';
+import './MainKaYoung.scss';
 
-function Main() {
+function Main_kaYoung() {
   return (
-    <div className="main">
+    <div className="main_ky">
       <nav className="westa_nav">
         <div className="container_nav1">
           <i className="fa-brands fa-instagram fa-2x" />
@@ -20,6 +20,7 @@ function Main() {
         </div>
         <div className="container_nav2">
           <img
+            fo
             className="nav_img"
             src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
           />
@@ -45,7 +46,7 @@ function Main() {
                   src="https://images.unsplash.com/photo-1651315450323-3c3ebec40539?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=734&q=80"
                   className="user_info_img"
                 />
-                <span className="name">Camille</span>
+                <span className="name">camille</span>
               </div>
               <div className="more_icon">
                 <i className="fa-solid fa-ellipsis" />
@@ -82,7 +83,7 @@ function Main() {
               </div>
               <div className="infomation">
                 <p>
-                  <span className="like_id">ka_doggy</span>
+                  <span className="like_id">camille</span>
                   <span className="at-tag">I'm gonna be going to start...</span>
                   <span className="like_more">더 보기</span>
                 </p>
@@ -90,20 +91,30 @@ function Main() {
               <div className="comment_section">
                 <ul className="comments">
                   <li>
-                    <span>
-                      <span className="point-span userID">justin_beboy</span>
-                      푸하하하
-                    </span>
-                    <button onclick="Toggle2()" className="heartBtn2" id="btn2">
-                      <i className="fa-regular fa-heart" />
-                    </button>
+                    <div className="comment_text">
+                      <span>
+                        <span className="point-span userID">justin_beboy</span>
+                        푸하하하
+                      </span>
+                    </div>
+
+                    <div className="comment_like">
+                      <button
+                        onclick="Toggle2()"
+                        className="heartBtn2"
+                        id="btn2"
+                      >
+                        <i className="fa-regular fa-heart" />
+                      </button>
+                    </div>
                   </li>
                 </ul>
                 <div className="time_log">
-                  <span>20분 전</span>
+                  <span className="log_comment">20분 전</span>
                 </div>
                 <ul id="comment-list" />
-                <form id="comment-form" className="commentFormclass">
+
+                <form id="comment-form" className="commentFormClass">
                   <input
                     type="text"
                     className="makeComment"
@@ -257,4 +268,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Main_kaYoung;
