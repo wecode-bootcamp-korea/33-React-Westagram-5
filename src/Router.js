@@ -1,8 +1,4 @@
-/*
-import LoginJiHoo from './pages/JiHoo/Login/Login';
-import MainJiHoo from './pages/JiHoo/Main/Main';
-
-import LoginKaYoung from './pages/KaYoung/Login/Login';
+/*import LoginKaYoung from './pages/KaYoung/Login/Login';
 import MainKayoung from './pages/KaYoung/Main/Main';
 
 
@@ -43,12 +39,18 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/KaYoung/Login/Login';
 import Main from './pages/KaYoung/Main/Main';
+
+import LoginJiHoo from './pages/JiHoo/Login/LoginJiHoo';
+import MainJiHoo from './pages/JiHoo/Main/MainJiHoo';
 const Router = () => {
   return (
     <BrowserRouter>
+    
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/login-JiHoo" element={<LoginJiHoo />} />
+        <Route path="/main-JiHoo" element={<MainJiHoo />} />
       </Routes>
     </BrowserRouter>
   );
