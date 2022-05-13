@@ -22,7 +22,6 @@ function LoginJiHoo() {
   const goToMain = () => {
     navigate('/main-JiHoo');
   };
-  console.log(isId);
 
   return (
     <div>

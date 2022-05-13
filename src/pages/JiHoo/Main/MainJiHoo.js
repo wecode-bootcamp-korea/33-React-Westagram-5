@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Nav from '../../../components/Nav/Nav';
+import CommentBox from '../components/CommentBox';
 import './MainJiHoo.scss';
 
 const MainJiHoo = () => {
+  const nextId = useRef(1);
+  const [value, setValue] = useState('');
+  const [comment, setComment] = useState([]);
+  const onChange = e => {
+    setValue(e.target.value);
+  };
+  const onSubmit = e => {
+    setComment([
+      ...comment,
+      {
+        id: nextId.current,
+        text: value,
+        name: 'dlwlrma',
+      },
+    ]);
+    setValue('');
+    nextId.current += 1;
+    e.preventDefault();
+  };
+
   return (
     <div class="JiHoo">
       <section>
@@ -54,18 +75,21 @@ const MainJiHoo = () => {
                     브라운에서~~ 더보기
                     <br />
                     <span className="name">dlwlrma</span> 다음에 같이가자~~~
+                    <CommentBox comment={comment} />
                     <br /> 1시간전
                   </div>
-                  <div className="comment_upload">
+                  <form className="comment_upload" onSubmit={onSubmit}>
                     <input
                       className="commentUpload"
                       type="text"
                       placeholder="댓글 달기..."
+                      onChange={onChange}
+                      value={value}
                     />
-                    <button className="btn" disabled="disabled">
+                    <button className="btn" type="submit">
                       게시
                     </button>
-                  </div>
+                  </form>
                 </div>
               </div>
             </article>
