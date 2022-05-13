@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './LoginJiHoo.scss';
 
 function LoginJiHoo() {
-  const [isId, setIsId] = useState();
-  const [isPassWord, setIsPassWord] = useState();
+  const [isId, setIsId] = useState('');
+  const [isPassWord, setIsPassWord] = useState('');
 
   const handleIdInput = e => {
     setIsId(e.target.value);
@@ -12,11 +12,17 @@ function LoginJiHoo() {
   const handlePwInput = e => {
     setIsPassWord(e.target.value);
   };
+  const isInputValid = isId.includes('@') && isPassWord.length >= 5;
+
+  const isInputValue = () => {
+    return !isInputValid;
+  };
 
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-JiHoo');
   };
+  console.log(isId);
 
   return (
     <div>
@@ -37,7 +43,11 @@ function LoginJiHoo() {
                 placeholder="비밀번호"
                 onChange={handlePwInput}
               />
-              <button className="login_Btn" onClick={goToMain}>
+              <button
+                className="login_Btn"
+                onClick={goToMain}
+                disabled={isInputValue()}
+              >
                 로그인
               </button>
             </div>

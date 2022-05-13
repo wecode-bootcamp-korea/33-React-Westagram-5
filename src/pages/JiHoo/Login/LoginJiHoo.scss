@@ -22,7 +22,7 @@ $border-style: 2px solid rgba(239, 239, 239, 0.5);
     .login_Title {
       position: absolute;
       top: 50px;
-      font-family: "Lobster", cursive;
+      font-family: 'Lobster', cursive;
       font-size: 40px;
     }
 
@@ -65,6 +65,9 @@ $border-style: 2px solid rgba(239, 239, 239, 0.5);
       .login_Btn:hover {
         cursor: pointer;
       }
+      .login_Btn :disabled {
+        background-color: rgba(0, 149, 246, 0.5);
+      }
     }
     .forget {
       position: relative;
@@ -76,4 +79,4 @@ $border-style: 2px solid rgba(239, 239, 239, 0.5);
     }
   }
 }
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
