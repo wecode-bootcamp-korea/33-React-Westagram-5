@@ -142,10 +142,10 @@
             .like {
               display: flex;
               align-items: center;
+              padding-top: 5px;
               .user_icon {
                 width: 35px;
                 height: 35px;
-                padding-top: 10px;
               }
             }
           }
@@ -154,6 +154,10 @@
           }
           .comment {
             padding-left: 10px;
+            li {
+              font-size: 14px;
+              padding-top: 3px;
+            }
           }
 
           .comment_upload {
