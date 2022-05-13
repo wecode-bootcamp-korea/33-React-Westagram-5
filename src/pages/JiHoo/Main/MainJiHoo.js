@@ -1,23 +1,12 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 import './MainJiHoo.scss';
+
 const MainJiHoo = () => {
   return (
     <div class="JiHoo">
       <section>
-        <nav>
-          <div className="header">
-            <div className="logo">
-              <i className="fa-brands fa-instagram fa-1x"></i>
-              <span className="title">Westagram</span>
-            </div>
-            <input type="text" className="search" placeholder="검색" />
-            <div className="icon">
-              <img src="  /images/JiHoo/explore.png" alt="explore" />
-              <img src="  /images/JiHoo/heart.png" alt="heart" />
-              <img src="  /images/JiHoo/profile.png" alt="profile" />
-            </div>
-          </div>
-        </nav>
+        <Nav />
         <main>
           <div className="feeds">
             <article>
@@ -38,16 +27,16 @@ const MainJiHoo = () => {
               <div className="feed">
                 <div className="feed_icons">
                   <span className="like_icon">
-                    <i className="fa-solid fa-heart fa-2x"></i>
+                    <i className="fa-solid fa-heart fa-2x" />
                   </span>
                   <span className="comment_icon">
-                    <i className="fa-regular fa-comment fa-2x"></i>{' '}
+                    <i className="fa-regular fa-comment fa-2x" />
                   </span>
                   <span className="send_icon">
-                    <i className="fa-regular fa-paper-plane fa-2x"></i>
+                    <i className="fa-regular fa-paper-plane fa-2x" />
                   </span>
                   <span className="bookmark_icon">
-                    <i className="fa-regular fa-bookmark fa-2x"></i>
+                    <i className="fa-regular fa-bookmark fa-2x" />
                   </span>
                 </div>
                 <div className="feed_content">
@@ -57,14 +46,15 @@ const MainJiHoo = () => {
                       src="/images/JiHoo/usericon.PNG"
                       alt="usericon"
                     />
-                    <span className="name">jihoo</span>님{' '}
+                    <span className="name">jihoo</span>님
                     <span className="name">외 306명</span>이 좋아합니다
                   </div>
                   <div className="comment">
                     <span className="name">jihoo</span> 청담 베스킨라빈스
-                    브라운에서~~ 더보기<br></br>
+                    브라운에서~~ 더보기
+                    <br />
                     <span className="name">dlwlrma</span> 다음에 같이가자~~~
-                    <br></br> 1시간전
+                    <br /> 1시간전
                   </div>
                   <div className="comment_upload">
                     <input
@@ -98,7 +88,6 @@ const MainJiHoo = () => {
               />
               <span className="jihoo">jihoo2</span>
               <span className="follow">팔로우</span>
-              {''}
             </div>
             <div className="users">
               <img
