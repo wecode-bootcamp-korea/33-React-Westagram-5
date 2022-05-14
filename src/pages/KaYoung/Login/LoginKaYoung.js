@@ -1,11 +1,11 @@
 //import React from 'react';
-import './Login.scss';
+import './LoginKaYoung.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Login_KaYoung() {
   return (
-    <div className="login">
+    <div className="login_ky">
       <body>
         <div className="westaWrap">
           <header className="westa">Westagram</header>
@@ -22,14 +22,16 @@ function Login() {
               id="pw_field"
               placeholder="비밀번호"
             />
-            <Link to="/main">
-              <button type="submit" className="login_btn">
+            <Link to="/main-kayoung" className="main_btn">
+              <button type="submit" className="login_btn1">
                 로그인
               </button>
             </Link>
           </form>
           <footer className="login_footer">
-            <a href="">비밀번호 잊으셨나요?</a>
+            <a href="/" className="pw_link">
+              비밀번호 잊으셨나요?
+            </a>
           </footer>
         </div>
       </body>
@@ -37,4 +39,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login_KaYoung;

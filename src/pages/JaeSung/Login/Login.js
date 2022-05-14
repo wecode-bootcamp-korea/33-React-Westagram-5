@@ -1,6 +1,6 @@
 //import React from 'react';
 import './Login.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Loginjaesung() {
@@ -9,33 +9,55 @@ function Loginjaesung() {
   const goTomain = () => {
     navigate('/main-Jaesung');
   };
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const InputValue = id.includes('@') && pw.length >= 5;
+
+  const handleIdIput = event => {
+    setId(event.target.value);
+    console.log(id);
+  };
+
+  const handlePwInput = event => {
+    setPw(event.target.value);
+    console.log(pw);
+  };
 
   return (
-    <body className="loginbody">
-      <div class="login-background">
-        <main class="container">
-          <span class="logo">westagram</span>
-          <div class="input-box">
-            <input
-              class="login-input"
-              type="text"
-              placeholder="전화번호, 사용자 이름 또는 이메일"
-            />
-            <input
-              class="password-input"
-              type="password"
-              placeholder="비밀번호"
-            />
-            <button class="login-button" onClick={goTomain}>
-              로그인
-            </button>
-          </div>
-        </main>
-        <span class="miss-password">
-          <a href="">비밀번호를 잊으셨습니까?</a>
-        </span>
-      </div>
-    </body>
+    <html className="loginhtml">
+      <body className="loginbody">
+        <div className="login-background">
+          <main className="container">
+            <span className="logo">westagram</span>
+            <div className="input-box">
+              <input
+                className="login-input"
+                type="text"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={handleIdIput}
+              />
+              <input
+                className="password-input"
+                type="password"
+                placeholder="비밀번호"
+                onChange={handlePwInput}
+              />
+              <button
+                className={InputValue ? 'login-button' : 'login-buttonDisabled'}
+                onClick={goTomain}
+                disabled={InputValue ? false : true}
+              >
+                로그인
+              </button>
+            </div>
+          </main>
+          <span className="miss-password">
+            <a href="">비밀번호를 잊으셨습니까?</a>
+          </span>
+        </div>
+      </body>
+    </html>
   );
 }
 

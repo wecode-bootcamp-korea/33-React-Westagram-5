@@ -2,12 +2,13 @@
   box-sizing:border-box;
 }
 
-html{
-  height: 100%;
+.loginhtml{
+  height: 800px;
   display:flex;
   align-items: center;
   justify-content: center;
   background-color: #FAFAFA
+
 }
 .loginbody{
   height: 100%;
@@ -76,13 +77,23 @@ html{
 .login-button{
   width:100%;
   height: 30px;
-  background-color:#9aafdb;
+  background-color:#0095f6;
   border-radius:6px;
   border:solid 0px ;
   color:white;
   font-size: 15px;
   margin-top: 10px;
   
+}
+.login-buttonDisabled{
+  width:100%;
+  height: 30px;
+  background-color: #9aafdb;
+  border-radius:6px;
+  border:solid 0px ;
+  color:white;
+  font-size: 15px;
+  margin-top: 10px;
 }
 
 .miss-password{
