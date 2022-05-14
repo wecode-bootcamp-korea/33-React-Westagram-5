@@ -1,319 +1,316 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
 
-$border-style: 1px solid lightgray;
-
-@mixin flex-center {
-  display: flex;  
-  align-items: center;
-}
-
-.navdiv {  
-  width: 100%;
-  text-align: center;  
-  display: table;
-  background-color: white;
-}
-
-.navdiv1 {
-  width: 935px;
-  height: 60px;
-  padding: 0 20px;  
-  display: table-cell;
-  vertical-align: middle;
-  border-bottom: 1px solid #8e8e8e;
-}
-
-.webstaNav {
-  @include flex-center;
-  justify-content: space-around;  
-  height: 100%;
-}
-
-.logo {  
-   img {
-    padding-right: 5px;
-  }
-  
-}
-
-
-.navInsata {
-  font-family: lobster;
-  color: black;
-  border-left: 1px solid black;
-  font-size: 20px;
-  padding-left: 7px;
-}
-
-.searchBar {
-  display: flex;
-  position: relative;
-}
-
-.searchBar {
-  i {
-    position: absolute;
-    left: 40px;
-    top: 2px;
-  }
-
-  input {
-    &::placeholder {
-      padding-left: 55px;
-    }
-  }
-}
-
-.navRight {
-  width: 100px;
-  display: flex;
-  justify-content: space-between;
-}
-
-main {
+.mainHY {
   display: flex;
   justify-content: center;
   height: 100%;
-}
+  padding-top: 4rem;
 
-.feeds {
- height: 100%;
- margin-right: 28px;
- width: 614px;
- position: relative;
-}
+  .feeds {
+    height: 100%;
+    margin-right: 28px;
+    width: 614px;
+    position: relative;
 
-article {
-  margin-top: 36px;
-  width: 614px;
-  background-color: white;
-  border: $border-style;
-  height: 100%;
-}
+    article {
+      margin-top: 36px;
+      width: 614px;
+      background-color: white;
+      border: $border-style;
+      height: 100%;
 
-.feedHeader {
-  border: $border-style;
-  height: 70px;
-  @include flex-center;
-  justify-content: space-between;   
-}
+      .feedHeader {
+        border: $border-style;
+        height: 70px;
+        @include flex-center;
+        justify-content: space-between;
 
-.feedHeaderStart {
-  width: 8.5rem;
-  margin-left: 10px;  
-  @include flex-center;  
-  justify-content: space-between;    
-}
+        .feedHeaderStart {
+          width: 8.5rem;
+          margin-left: 10px;
+          @include flex-center;
+          justify-content: space-between;
 
-.feedHeaderEnd {
-  @include flex-center;
-  justify-content: end;  
-  margin-right: 10px;
-}
+          a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+        }
 
-.mainFeed {
-  width: 614px;
-  img {
-    width: 100%;
+        .feedHeaderEnd {
+          @include flex-center;
+          justify-content: end;
+          margin-right: 10px;
+        }
+      }
+
+      .mainFeed {
+        width: 614px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .articleCommu {
+        display: flex;
+        height: 54px;
+        justify-content: space-between;
+        margin: 0 10px;
+
+        .commuStart {
+          width: 7rem;
+          @include flex-center;
+          justify-content: space-between;
+          margin-left: 7px;
+
+          i {
+            width: 24px;
+          }
+        }
+
+        .commuEnd {
+          width: 6rem;
+          @include flex-center;
+          justify-content: end;
+          margin-right: 7px;
+
+          i {
+            width: 24px;
+          }
+        }
+      }
+
+      .likeart {
+        height: 20px;
+        @include flex-center;
+        margin-left: 10px;
+
+        img {
+          margin: 0.5rem;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+      }
+      .commentArt {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        .myFeed,
+        .yourComment {
+          @include flex-center;
+          height: 1.25rem;
+
+          a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+
+          p {
+            margin-left: 7px;
+          }
+
+          span {
+            font-size: 0.75rem;
+            color: lightgray;
+          }
+
+          #todo-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+              display: flex;
+
+              span:nth-child(1) {
+                flex-grow: 0.3;
+                font-weight: bold;
+              }
+
+              span:nth-child(2) {
+                flex-grow: 10;
+              }
+
+              button {
+                color: gray;
+                background-color: white;
+                border: none;
+                flex-grow: 0.1;
+              }
+            }
+          }
+        }
+      }
+      .ago {
+        text-align: start;
+        color: lightgray;
+        font-size: 0.75rem;
+        margin-left: 1rem;
+      }
+
+      .commentSection {
+        border-top: $border-style;
+        height: 53px;
+        display: flex;
+        width: 100%;
+
+        #comment {
+          @include flex-center;
+          justify-content: space-around;
+          margin: auto;
+          i {
+            margin: 0 0.25rem;
+          }
+          input {
+            width: 30rem;
+            border: none;
+          }
+          button {
+            border: none;
+            background-color: white;
+            width: 2.75rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: lightgray;
+          }
+        }
+      }
+    }
   }
-}
 
-.articleCommu {
-  display: flex;
-  height: 54px;
-  justify-content: space-between;
-  margin: 0 10px;
-  img, i {
-    width: 24px;
-  }
-}
+  .main-right {
+    margin-top: 36px;
+    width: 293px;
+    position: relative;
+    right: 1.5rem;
 
-.commuStart {
-  width: 7rem;
-  @include flex-center;
-  justify-content: space-between;  
-  margin-left: 7px;
-}
-
-.commuEnd {
-  width: 6rem;
-  @include flex-center;
-  justify-content: end;    
-  margin-right: 7px;
-}
-
-.likeart {
-  height: 20px;
-  @include flex-center;
-  margin-left: 10px;
-}
-
-.likeart {
-  img {
-    margin: 0.5rem;
-  }  
-}
-
-.commentArt {
-  display: flex;
-  flex-direction: column;    
-  margin-left: 1rem;
-}
-
-.myFeed, .yourComment {
-  @include flex-center;
-  height: 1.25rem;  
-}
-
-.myFeed , .yourComment{
-  p {
-    margin-left: 7px;
-  }  
-}
-
-#todo-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#todo-list {
-  li {
-    display: flex;
-    
-    span:nth-child(1) {  
-      flex-grow: 0.3;
-      font-weight: bold;
+    .fixedRight {
+      position: fixed;
+      width: 293px;
     }
 
-    span:nth-child(2) {  
-      flex-grow: 10;
+    .rightMyProfile {
+      display: flex;
+
+      div {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+      }
+
+      .profileDescription {
+        color: #c7c7c7;
+
+        span {
+          margin-left: -0.6rem;
+        }
+      }
     }
 
-    button {
-      color: gray;
-      background-color: white;  
-      border: none;
-      flex-grow: 0.1;
-    }    
-  }  
-}
+    .rightStory {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      border: $border-style;
+      background-color: white;
 
-.myFeed {
-  span {
-    font-size: 0.75rem;
-    color: lightgray;
-  }  
-}
+      .storyAll {
+        @include flex-center;
+        justify-content: space-between;
+        font-size: 14px;
+        padding: 0.5rem;
 
-.ago {
-  text-align: start;
-  margin-left: 10px;
-  color: lightgray;
-  font-size: 0.75rem;  
-  margin-top: -0.75rem;
-  margin-left: 1rem;
-}
+        p {
+          color: gray;
+        }
 
-.commentSection {
-  border-top: $border-style;
-  height: 53px;
-  display: flex;
-  width: 100%;  
-}
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
 
-#comment {    
-  @include flex-center; 
-  justify-content: space-around;
-  margin: auto;
-  i {
-    margin: 0 0.25rem;
+      .storyPeople {
+        display: flex;
+        color: #c7c7c7;
+        margin-left: 5px;
+      }
+
+      .inStory {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        color: #c7c7c7;
+        font-size: 15px;
+
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .rightRecommendForYou {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      margin: 10px 0;
+      border: $border-style;
+      background-color: white;
+
+      .recommendAll {
+        @include flex-center;
+        justify-content: space-between;
+        margin: 0.5rem;
+        font-size: 14px;
+
+        p {
+          color: gray;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      .recommendPeople {
+        display: flex;
+        margin-left: 5px;
+
+        .recommend {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          color: #c7c7c7;
+          font-size: 15px;
+
+          a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .likeFooter {
+      margin: 10px 0;
+      color: #c7c7c7;
+    }
   }
-  input {
-    width: 30rem;
-    border: none;
-  }
-  button {
-    border: none;
-    background-color: white; 
-    width: 2.75rem;
-    font-size: 0.8rem;  
-    text-align: center;
-    color: lightgray;
-  }
-}
-
-.main-right {
-  margin-top: 36px;
-  width: 293px;  
-  position: relative;
-  right: 1.5rem;
-}
-
-.fixedRight {
-  position: fixed;
-  width: 293px;    
-}
-
-.rightMyProfile {
-  display: flex;  
-
-  div {
-    margin-left: 10px;
-  }
-}
-
-.profileDescription {
-  text-align: start;
-  color: #c7c7c7;
-}
-
-.rightStory {
-  display: flex;
-  flex-direction: column;
-  text-align: start;  
-}
-
-.storyAll, .recommendAll {
-  @include flex-center;
-  justify-content: space-between;  
-  margin: -5px 7px;
-  font-size: 14px;
-}
-
-.inStory, .recommend {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  color: #c7c7c7;  
-  font-size: 15px;
-}
-
-
-.storyPeople {
-  display: flex;    
-  color: #c7c7c7;
-  margin-left: 5px;
-}
-
-.rightStory, .rightRecommendForYou {
-  border: $border-style;
-  background-color: white;  
-}
-
-.rightRecommendForYou {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  margin: 10px 0;
-}
-
-.recommendPeople {
-  display: flex;  
-  margin-left: 5px;
-}
-
-.likeFooter {
-  margin: 10px 0;
-  color: #c7c7c7;
 }

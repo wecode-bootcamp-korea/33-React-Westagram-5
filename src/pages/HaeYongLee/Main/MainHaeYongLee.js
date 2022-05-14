@@ -1,60 +1,21 @@
 import React from 'react';
 // import { useNavigate } from "react-router-dom";
 import './MainHaeYongLee.scss';
+import '../../../styles/reset.scss';
+import '../../../styles/common.scss';
+import Nav from '../../../components/Nav/Nav';
 
 function MainHaeYongLee() {
   // const navigate = useNavigate();
 
   // const goToMain = () => {
-  //   navigate("/main");
+  //   navigate("/main-HaeYongLee");
   // };
 
   return (
     <>
-      <div className="navdiv">
-        <div className="navdiv1">
-          <nav>
-            <div className="webstaNav">
-              <div className="logo">
-                <img
-                  alt="instagram black logo"
-                  src="/images/HaeYongLee/instaLogoBlack.png"
-                  width="20px"
-                />
-                <span className="navInsata">westagram</span>
-              </div>
-              <div className="searchBar">
-                <i className="fa-solid fa-magnifying-glass" />
-                <input type="text" placeholder="검색" />
-              </div>
-              <div className="navRight">
-                <a href="#">
-                  <img
-                    alt="explore"
-                    src="/images/HaeYongLee/explore.png"
-                    width="24px"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    alt="heart"
-                    src="/images/HaeYongLee/heart.png"
-                    width="24px"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    alt="profile"
-                    src="/images/HaeYongLee/profile.png"
-                    width="24px"
-                  />
-                </a>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
-      <main>
+      <Nav />
+      <main className="mainHY">
         <div className="feeds">
           <article>
             <div className="feedHeader">

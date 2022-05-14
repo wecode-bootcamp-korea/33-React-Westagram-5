@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
 @import '../../../styles/variables.scss';
-
-$theme-color: #fafafa;
-$theme-color2: #8e8e8e;
-$border-style: 1px solid lightgray;
 
 @mixin flex-center {
   display: flex;
@@ -74,50 +69,43 @@ $border-style: 1px solid lightgray;
         .buttonLoginDisabled {
           background-color: #0095f6;
         }
+
+        .orStick {
+          display: flex;
+          margin: 10px 40px;
+          width: 268px;
+          justify-content: space-between;
+        }
+
+        .stick {
+          width: 110px;
+        }
+
+        .or {
+          color: $theme-color2;
+          font-size: 13px;
+        }
+
+        .fbLogin {
+          width: 268px;
+          height: 20;
+
+          .facebookLogin {
+            font-size: 14px;
+            color: #385185;
+            text-decoration: none;
+          }
+        }
+
+        .forgetPW {
+          font-size: 13px;
+          width: 346px;
+          height: 16px;
+          margin-top: 12px;
+          color: #00376b;
+          text-decoration: none;
+        }
       }
     }
   }
-}
-
-.loginBorder {
-  width: 348px;
-  height: 374px;
-  border: $border-style;
-  background-color: #ffffff;
-  margin-bottom: 10px;
-  padding: 10px 0;
-}
-
-.orStick {
-  display: flex;
-  margin: 10px 40px;
-  width: 268px;
-  justify-content: space-between;
-}
-
-.stick {
-  width: 110px;
-}
-
-.or {
-  color: $theme-color2;
-  font-size: 13px;
-}
-
-.fbLogin {
-  width: 268px;
-  height: 20;
-}
-
-.facebookLogin {
-  font-size: 14px;
-  color: #385185;
-}
-
-.forgetPW {
-  font-size: 13px;
-  width: 346px;
-  height: 16px;
-  margin-top: 12px;
-  color: #00376b;
 }

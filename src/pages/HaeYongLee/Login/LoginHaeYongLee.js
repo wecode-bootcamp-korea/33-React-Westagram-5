@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginHaeYongLee.scss';
+import '../../../styles/reset.scss';
+import '../../../styles/common.scss';
 
 function LoginHaeYongLee() {
   const navigate = useNavigate();
 
   const goToMain = () => {
     navigate('/main-HaeYongLee');
+  };
+
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const handleIdInput = event => {
+    setId(event.target.value);
+  };
+
+  const handlePwInput = event => {
+    setPw(event.target.value);
   };
 
   return (
@@ -23,6 +35,7 @@ function LoginHaeYongLee() {
                 className="westaID"
                 name="userID"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={handleIdInput}
                 required
               />
             </div>
@@ -32,6 +45,7 @@ function LoginHaeYongLee() {
                 name="userPassword"
                 className="westaPW"
                 placeholder="비밀번호"
+                onChange={handlePwInput}
                 required
               />
             </div>

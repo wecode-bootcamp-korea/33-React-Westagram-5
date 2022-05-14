@@ -1,3 +1,8 @@
 $theme-color: #fafafa;
 $theme-color2: #8e8e8e;
 $border-style: 1px solid lightgray;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
