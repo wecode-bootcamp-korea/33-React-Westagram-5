@@ -55,8 +55,21 @@
       border-style: none;
       border-radius: 3px;
       font-size: 1rem;
-      opacity: 0.4;
+      // opacity: 0.4;
       color: white;
+
+      &:disabled {
+        position: absolute;
+        top: 150px;
+        width: 310px;
+        height: 35px;
+        left: 100px;
+        background-color: #a0cbe2;
+        border-style: none;
+        border-radius: 3px;
+        font-size: 1rem;
+        color: white;
+      }
     }
 
     .forgot-password {
