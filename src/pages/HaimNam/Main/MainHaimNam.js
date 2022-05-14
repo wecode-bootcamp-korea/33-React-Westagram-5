@@ -1,27 +1,11 @@
 import React from 'react';
+import Nav from '../../../components/Nav/Nav';
 import './MainHaimNam.scss';
 
 function MainHaimNam() {
   return (
-    <>
-      <nav className="nav">
-        <img className="logo" src="/images/HaimNam/instagram.png" alt="logo" />
-        <span className="navTitle">Westagram</span>
-        <div className="inputBox">
-          <img className="find" src="/images/HaimNam/find.png" alt="find" />
-          <input className="searchInput" type="text" placeholder="Search" />
-        </div>
-        <div className="rightIcons">
-          <img
-            className="explore"
-            src="/images/HaimNam/explore.png"
-            alt="explore"
-          />
-          <img className="heart" src="/images/HaimNam/heart.png" alt="heart" />
-          <img className="human" src="/images/HaimNam/human.png" alt="human" />
-        </div>
-      </nav>
-
+    <div className="Haim">
+      <Nav />
       <div className="mainBox">
         <div className="upRightBox">
           <img
@@ -98,9 +82,9 @@ function MainHaimNam() {
             </div>
           </div>
         </div>
-        <div className="unvisiableBox"></div>
+        <div className="unvisiableBox" />
       </div>
-    </>
+    </div>
   );
 }
 
