@@ -21,6 +21,12 @@ function LoginHaimNam() {
     setPwInput(e.target.value);
   };
 
+  const btnValidation = () => {
+    const inputCondition =
+      inputId.includes('@') && inputPw.length > 5 ? true : false;
+    return !inputCondition;
+  };
+
   return (
     <div className="big-container">
       <h1 className="title">Westagram</h1>
@@ -39,7 +45,11 @@ function LoginHaimNam() {
           onChange={handlePwInput}
         />
 
-        <button onClick={goToMain} className="blueButton">
+        <button
+          onClick={goToMain}
+          className="blueButton"
+          disabled={btnValidation()}
+        >
           Log in
         </button>
 
