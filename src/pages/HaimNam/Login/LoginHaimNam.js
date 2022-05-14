@@ -21,7 +21,11 @@ function LoginHaimNam() {
     setPwInput(e.target.value);
   };
 
-  const inputCondition = inputId.includes('@') && inputPw.length > 5;
+  const btnValidation = () => {
+    const inputCondition =
+      inputId.includes('@') && inputPw.length > 5 ? true : false;
+    return !inputCondition;
+  };
 
   return (
     <div className="big-container">
@@ -44,7 +48,7 @@ function LoginHaimNam() {
         <button
           onClick={goToMain}
           className="blueButton"
-          disabled={!inputCondition}
+          disabled={btnValidation()}
         >
           Log in
         </button>
