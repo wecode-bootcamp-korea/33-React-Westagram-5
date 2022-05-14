@@ -6,3 +6,18 @@ $border-style: 1px solid lightgray;
   display: flex;
   align-items: center;
 }
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin buttonShape {
+  color: white;
+  width: 268px;
+  height: 30px;
+  margin: 8px 40px 8px 40px;
+  border: none;
+  border-radius: 5px;
+}

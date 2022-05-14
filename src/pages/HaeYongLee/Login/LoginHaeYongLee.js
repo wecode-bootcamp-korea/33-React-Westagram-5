@@ -21,6 +21,8 @@ function LoginHaeYongLee() {
     setPw(event.target.value);
   };
 
+  const isInputValid = id.includes('@') && pw.length >= 5;
+
   return (
     <section className="loginSection">
       <div className="login">
@@ -49,7 +51,12 @@ function LoginHaeYongLee() {
                 required
               />
             </div>
-            <button onClick={goToMain} type="button" className="buttonLogin">
+            <button
+              type="button"
+              onClick={goToMain}
+              className={isInputValid ? 'buttonLogin' : 'buttonLoginDisabled'}
+              disabled={isInputValid ? false : true}
+            >
               로그인
             </button>
             <div className="orStick">
