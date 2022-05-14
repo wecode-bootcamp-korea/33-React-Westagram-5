@@ -1,9 +1,11 @@
 import './MainKaYoung.scss';
+//import Nav from './component/Nav';
+import Nav from '../../../components/Nav/Nav';
 
 function Main_kaYoung() {
   return (
     <div className="main_ky">
-      <nav className="westa_nav">
+      {/* <nav className="westa_nav">
         <div className="container_nav1">
           <i className="fa-brands fa-instagram fa-2x" />
           <h1 className="westagram_head">Westagram</h1>
@@ -34,7 +36,8 @@ function Main_kaYoung() {
       "
           />
         </div>
-      </nav>
+      </nav> */}
+      <Nav />
 
       <main className="westa_main">
         <div className="feeds">
