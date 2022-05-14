@@ -1,20 +1,22 @@
-//import React from 'react';
+import React, { useState } from 'react';
 import './LoginKaYoung.scss';
-//import React, { useState } from 'react';
+//import React { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+//import { configs } from 'eslint-plugin-prettier';
 
 function Login_KaYoung() {
   const [id, setId] = useState('');
-  function handleInput(event) {
+  const [pw, setPw] = useState('');
+  const isValid = id.includes('@') && 5 <= pw.length;
+
+  const handleIdInput = event => {
     setId(event.target.value);
     console.log('id', id);
-  }
-  const [pw, setPw] = useState('');
-  function handlePwInput(event) {
+  };
+  const handlePwInput = event => {
     setPw(event.target.value);
     console.log('pw', pw);
-  }
+  };
   return (
     <div className="login_ky">
       <body>
@@ -26,7 +28,7 @@ function Login_KaYoung() {
               className="login_id"
               id="id_field"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={handleInput}
+              onChange={handleIdInput}
             />
             <input
               type="password"
@@ -35,8 +37,15 @@ function Login_KaYoung() {
               placeholder="비밀번호"
               onChange={handlePwInput}
             />
-            <Link to="/main-kayoung" className="main_btn">
-              <button type="submit" className="login_btn1">
+            <Link
+              to="/main-kayoung"
+              className={isValid ? 'main_btn2' : 'main_btn'}
+            >
+              <button
+                type="submit"
+                disabled={isValid ? true : false}
+                className="login_btn1"
+              >
                 로그인
               </button>
             </Link>
@@ -53,3 +62,7 @@ function Login_KaYoung() {
 }
 
 export default Login_KaYoung;
+
+/*id.includes('@') && pw.length >= 5
+                    ? 'login_btn3'
+                    : 'login_btn1'*/
