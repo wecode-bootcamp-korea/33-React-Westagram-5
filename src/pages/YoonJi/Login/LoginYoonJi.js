@@ -14,6 +14,8 @@ function LoginYoonji() {
   const [pw, setPw] = useState('');
   const handlePwInput = event => setPw(event.target.value);
 
+  const isValid = id.includes('@') && pw.length >= 5;
+
   return (
     <>
       <div className="container">
@@ -33,7 +35,13 @@ function LoginYoonji() {
             id="userPwd"
             placeholder="비밀번호"
           />
-          <button onClick={goToMain}>로그인</button>
+          <button
+            onClick={goToMain}
+            className={isValid ? 'btnActive' : 'not'}
+            disabled={isValid ? false : true}
+          >
+            로그인
+          </button>
         </form>
         <div className="footer">비밀번호를 잊으셨나요?</div>
       </div>
