@@ -101,8 +101,7 @@
         flex-direction: column;
         margin-left: 1rem;
 
-        .myFeed,
-        .yourComment {
+        .myFeed {
           @include flex-center;
           height: 1.25rem;
 
@@ -120,34 +119,50 @@
             font-size: 0.75rem;
             color: lightgray;
           }
+        }
 
-          #todo-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+        .yourComment {
+          @include flex-center;
+          height: 1.25rem;
 
-            li {
-              display: flex;
+          a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
 
-              span:nth-child(1) {
-                flex-grow: 0.3;
-                font-weight: bold;
-              }
+          p {
+            margin-left: 7px;
+          }
+        }
 
-              span:nth-child(2) {
-                flex-grow: 10;
-              }
+        .todo-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
 
-              button {
-                color: gray;
-                background-color: white;
-                border: none;
-                flex-grow: 0.1;
-              }
+          li {
+            display: flex;
+
+            span:nth-child(1) {
+              flex-grow: 0.3;
+              font-weight: bold;
+            }
+
+            span:nth-child(2) {
+              flex-grow: 10;
+            }
+
+            button {
+              color: gray;
+              background-color: white;
+              border: none;
+              flex-grow: 0.1;
             }
           }
         }
       }
+
       .ago {
         text-align: start;
         color: lightgray;
@@ -172,13 +187,21 @@
             width: 30rem;
             border: none;
           }
-          button {
+          .buttonDisabled {
             border: none;
             background-color: white;
             width: 2.75rem;
             font-size: 0.8rem;
             text-align: center;
             color: lightgray;
+          }
+          .buttonEnabled {
+            border: none;
+            background-color: white;
+            width: 2.75rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: rgb(184, 184, 232);
           }
         }
       }

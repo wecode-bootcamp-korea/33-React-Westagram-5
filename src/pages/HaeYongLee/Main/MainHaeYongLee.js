@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { useNavigate } from "react-router-dom";
 import './MainHaeYongLee.scss';
 import '../../../styles/reset.scss';
@@ -11,6 +11,20 @@ function MainHaeYongLee() {
   // const goToMain = () => {
   //   navigate("/main-HaeYongLee");
   // };
+  const [comment, setComment] = useState('');
+  const commentInput = event => setComment(event.target.value);
+
+  const [commentArray, setCommentArray] = useState([]);
+  const registComment = event => {
+    event.preventDefault();
+    if (comment === '') {
+      return;
+    }
+    setCommentArray(commentValueList => [...commentValueList, comment]);
+    setComment('');
+  };
+
+  const commentValid = comment.length >= 1;
 
   return (
     <>
@@ -74,17 +88,38 @@ function MainHaeYongLee() {
                 <a href="#">changsik_kim</a>
                 <p>맛있어보이네요</p>
               </div>
-              <ul id="todo-list" />
+              <ul className="todo-list">
+                {commentArray.map((value, index) => (
+                  <li key={index}>
+                    <span>Hey.yong44</span>
+                    <span>{value}</span>
+                    <button>x</button>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="ago">
               <p>42 분전</p>
             </div>
             <section>
               <div className="commentSection">
-                <form id="comment">
+                <form id="comment" onSubmit={registComment}>
                   <i className="fa-regular fa-face-smile fa-lg" />
-                  <input type="text" placeholder="댓글 달기..." required />
-                  <button type="button">게시</button>
+                  <input
+                    type="text"
+                    placeholder="댓글 달기..."
+                    value={comment}
+                    onChange={commentInput}
+                  />
+                  <button
+                    type="button"
+                    onClick={registComment}
+                    className={
+                      commentValid ? 'buttonEnabled' : 'buttonDisabled'
+                    }
+                  >
+                    게시
+                  </button>
                 </form>
               </div>
             </section>
