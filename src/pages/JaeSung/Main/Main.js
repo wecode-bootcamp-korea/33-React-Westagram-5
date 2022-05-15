@@ -1,7 +1,21 @@
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
+import React, { useState } from 'react';
 
 function Mainjaesung() {
+  const [comment, setComment] = useState('');
+  const handleCommentInput = event => {
+    setComment(event.target.value);
+  };
+  const [commentArray, setCommentArray] = useState([]);
+  const onSubmit = event => {
+    let copy = [...commentArray];
+    copy.push(comment);
+    setCommentArray(copy);
+
+    setComment('');
+  };
+
   return (
     <>
       <body className="mainbody">
@@ -62,9 +76,12 @@ function Mainjaesung() {
                       <span>jungnaldo</span> 놀러가고싶다~!!
                     </p>
                     <p className="post-time">20분전</p>
-                    <ul id="commentLists">
-                      <li></li>
-                    </ul>
+                    <div id="commentLists">
+                      {commentArray.map(function (a, i) {
+                        return <p>{commentArray[i]}</p>;
+                      })}
+                      ;
+                    </div>
                   </div>
 
                   <div className="comment-wrapper">
@@ -72,8 +89,12 @@ function Mainjaesung() {
                       type="text"
                       className="comment-box"
                       placeholder="댓글을 입력하세요"
+                      value={comment}
+                      onChange={handleCommentInput}
                     />
-                    <button className="comment-btn">게시</button>
+                    <button className="comment-btn" onClick={onSubmit}>
+                      게시
+                    </button>
                   </div>
                 </div>
               </div>

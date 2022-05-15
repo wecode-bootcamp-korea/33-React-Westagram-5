@@ -16,12 +16,10 @@ function Loginjaesung() {
 
   const handleIdIput = event => {
     setId(event.target.value);
-    console.log(id);
   };
 
   const handlePwInput = event => {
     setPw(event.target.value);
-    console.log(pw);
   };
 
   return (
