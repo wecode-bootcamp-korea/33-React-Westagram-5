@@ -1,0 +1,29 @@
+/* Reply */
+.reply {
+  width: 100%;
+  padding-left: 10px;
+  position: relative;
+  li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    span {
+      margin-right: 8px;
+      font-weight: bold;
+    }
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.reply__input {
+  input {
+    &:focus {
+      outline: none;
+    }
+  }
+}

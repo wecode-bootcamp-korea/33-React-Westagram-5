@@ -1,4 +1,7 @@
 import './MainYoonJi.scss';
+import { useState, useEffect } from 'react';
+import Reply from '../../../components/Nav/Reply';
+
 // import React from "react";
 
 function MainYoonji() {
@@ -60,18 +63,9 @@ function MainYoonji() {
               <div className="feeds__text">
                 <span>syj3367</span> 복순이가 탈출해서 이불에 들어옴
               </div>
-              <ul className="reply"></ul>
-              <div className="time">42분 전</div>
+
+              <Reply />
             </div>
-            <form className="reply__input">
-              <input
-                className="reply__input__text"
-                type="text"
-                placeholder="댓글 달기..."
-                required
-              />
-              <button className="reply__input__btn">게시</button>
-            </form>
           </article>
         </section>
         <aside className="main-right">

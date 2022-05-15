@@ -1,6 +1,8 @@
 import React from 'react';
 import './LoginYoonJi.scss';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+
 
 function LoginYoonji() {
   const navigate = useNavigate();
