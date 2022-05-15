@@ -1,8 +1,29 @@
 import './MainKaYoung.scss';
-//import Nav from './component/Nav';
 import Nav from '../../../components/Nav/Nav';
+import Comment from './Commnet';
+import { useState, useRef } from 'react';
 
 function Main_kaYoung() {
+  const [value, setValue] = useState('');
+  const [comment, setComment] = useState([]);
+  const nextId = useRef(0);
+  const onChange = e => {
+    setValue(e.target.value);
+  };
+
+  const onSubmit = e => {
+    setComment([
+      ...comment,
+      {
+        id: nextId.current,
+        text: value,
+      },
+    ]);
+    nextId.current += 1;
+    setValue('');
+    e.preventDefault();
+  };
+
   return (
     <div className="main_ky">
       {/* <nav className="westa_nav">
@@ -92,37 +113,23 @@ function Main_kaYoung() {
                 </p>
               </div>
               <div className="comment_section">
-                <ul className="comments">
-                  <li>
-                    <div className="comment_text">
-                      <span>
-                        <span className="point-span userID">justin_beboy</span>
-                        푸하하하
-                      </span>
-                    </div>
-
-                    <div className="comment_like">
-                      <button
-                        onclick="Toggle2()"
-                        className="heartBtn2"
-                        id="btn2"
-                      >
-                        <i className="fa-regular fa-heart" />
-                      </button>
-                    </div>
-                  </li>
-                </ul>
                 <div className="time_log">
                   <span className="log_comment">20분 전</span>
                 </div>
-                <ul id="comment-list" />
-
-                <form id="comment-form" className="commentFormClass">
+                <Comment comment={comment} />
+                <form
+                  id="comment-form"
+                  className="commentFormClass"
+                  onSubmit={onSubmit}
+                >
                   <input
                     type="text"
                     className="makeComment"
                     placeholder="댓글 달기..."
                     required
+                    onChange={onChange}
+                    value={value}
+                    maxLength={10}
                   />
                   <button type="submit" className="comment-btn">
                     게시

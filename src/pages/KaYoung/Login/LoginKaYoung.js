@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 //import { configs } from 'eslint-plugin-prettier';
 
 function Login_KaYoung() {
+  //로그인 사용자 데이터 + 버튼 활성화
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const isValid = id.includes('@') && 5 <= pw.length;
@@ -17,6 +18,7 @@ function Login_KaYoung() {
     setPw(event.target.value);
     console.log('pw', pw);
   };
+
   return (
     <div className="login_ky">
       <body>
