@@ -37,7 +37,7 @@ function LoginYoonji() {
           />
           <button
             onClick={goToMain}
-            className={isValid ? 'btnActive' : 'not'}
+            className={isValid ? 'btnActive' : ''}
             disabled={isValid ? false : true}
           >
             로그인
