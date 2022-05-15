@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import './MainHaimNam.scss';
 
 function MainHaimNam() {
+  const [commentList, setCommentList] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <div className="Haim">
       <Nav />
@@ -34,17 +37,30 @@ function MainHaimNam() {
           <h3 className="likes">1218 Likes</h3>
           <ul className="commentList">
             <li>
-              <b>Haim_Chi</b>&nbsp Found it difficult to leave the building once
-              I saw this amazing art. Amazing, interesting and joyful. “Art” is
+              <i>Haim_Chi</i> Found it difficult to leave the building once I
+              saw this amazing art. Amazing, interesting and joyful. “Art” is
               fantastic!
             </li>
+            <li>{commentList}</li>
           </ul>
           <input
             className="commentBox"
             type="text"
             placeholder="Add a Comment"
+            onChange={e => {
+              setInputValue(e.target.value);
+            }}
           />
-          <button className="commentBtn">Post</button>
+          <button
+            className="commentBtn"
+            onClick={() => {
+              let copy = [...commentList];
+              copy.push(inputValue);
+              setCommentList(copy);
+            }}
+          >
+            Post
+          </button>
         </div>
 
         <div className="main-rightBox">
@@ -89,3 +105,7 @@ function MainHaimNam() {
 }
 
 export default MainHaimNam;
+
+// {commentList.map(function (a,i) {
+//   return <li>{setCommentList(i)}</li>;
+// })}
