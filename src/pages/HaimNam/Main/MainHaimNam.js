@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Nav from '../../../components/Nav/Nav';
 import './MainHaimNam.scss';
+import Comment from './componentsHaim/Comment';
 
 function MainHaimNam() {
   const [commentList, setCommentList] = useState([]);
@@ -41,7 +42,7 @@ function MainHaimNam() {
               saw this amazing art. Amazing, interesting and joyful. “Art” is
               fantastic!
             </li>
-            <li>{commentList}</li>
+            <Comment commentList={commentList} />
           </ul>
           <input
             className="commentBox"
@@ -105,7 +106,3 @@ function MainHaimNam() {
 }
 
 export default MainHaimNam;
-
-// {commentList.map(function (a,i) {
-//   return <li>{setCommentList(i)}</li>;
-// })}
