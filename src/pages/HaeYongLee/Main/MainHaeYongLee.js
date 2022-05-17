@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-// import { useNavigate } from "react-router-dom";
 import './MainHaeYongLee.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 import Nav from '../../../components/Nav/Nav';
+import CommentOutput from '../../../components/CommentOutput/CommentOutput';
+import ReceiveComment from '../../../components/ReceiveComment/ReceiveComment';
 
 function MainHaeYongLee() {
-  // const navigate = useNavigate();
-
-  // const goToMain = () => {
-  //   navigate("/main-HaeYongLee");
-  // };
   const [comment, setComment] = useState('');
   const commentInput = event => setComment(event.target.value);
 
@@ -34,14 +30,14 @@ function MainHaeYongLee() {
           <article>
             <div className="feedHeader">
               <div className="feedHeaderStart">
-                <a href="#">
+                <a href="#!">
                   <img
                     alt="header profile"
                     src="/images/HaeYongLee/websta_circle.png"
                     width="32px"
                   />
                 </a>
-                <a href="#">
+                <a href="#!">
                   <p>hey.yong44</p>
                 </a>
               </div>
@@ -50,10 +46,7 @@ function MainHaeYongLee() {
               </div>
             </div>
             <div className="mainFeed">
-              <img
-                alt="main feed picture"
-                src="/images/HaeYongLee/article1.jpg"
-              />
+              <img alt="main feed" src="/images/HaeYongLee/article1.jpg" />
             </div>
             <div className="articleCommu">
               <div className="commuStart">
@@ -67,35 +60,29 @@ function MainHaeYongLee() {
             </div>
             <div className="likeart">
               <img
-                alt="pro picture"
+                alt="pro"
                 src="/images/HaeYongLee/changsik-circle.png"
                 width="20px"
               />
-              <a href="#">
+              <a href="#!">
                 <p>changsik_kim</p>
               </a>
               <span>
-                님 외 <a href="#">여러명</a>이 좋아합니다
+                님 외 <a href="#!">여러명</a>이 좋아합니다
               </span>
             </div>
             <div className="commentArt">
               <div className="myFeed">
-                <a href="#">hey.yong44</a>
+                <a href="#!">hey.yong44</a>
                 <p>저녁엔 피맥 한잔~</p>
                 <span>더 보기</span>
               </div>
               <div className="yourComment">
-                <a href="#">changsik_kim</a>
+                <a href="#!">changsik_kim</a>
                 <p>맛있어보이네요</p>
               </div>
               <ul className="todo-list">
-                {commentArray.map((value, index) => (
-                  <li key={index}>
-                    <span>Hey.yong44</span>
-                    <span>{value}</span>
-                    <button>x</button>
-                  </li>
-                ))}
+                <CommentOutput commentArray={commentArray} />
               </ul>
             </div>
             <div className="ago">
@@ -105,11 +92,9 @@ function MainHaeYongLee() {
               <div className="commentSection">
                 <form id="comment" onSubmit={registComment}>
                   <i className="fa-regular fa-face-smile fa-lg" />
-                  <input
-                    type="text"
-                    placeholder="댓글 달기..."
-                    value={comment}
-                    onChange={commentInput}
+                  <ReceiveComment
+                    comment={comment}
+                    commentInput={commentInput}
                   />
                   <button
                     type="button"
@@ -127,14 +112,14 @@ function MainHaeYongLee() {
           <article>
             <div className="feedHeader">
               <div className="feedHeaderStart">
-                <a href="#">
+                <a href="#!">
                   <img
                     alt="header profile"
                     src="/images/HaeYongLee/websta_circle.png"
                     width="32px"
                   />
                 </a>
-                <a href="#">
+                <a href="#!">
                   <p>hey.yong44</p>
                 </a>
               </div>
@@ -143,10 +128,7 @@ function MainHaeYongLee() {
               </div>
             </div>
             <div className="mainFeed">
-              <img
-                alt="main feed picture"
-                src="/images/HaeYongLee/JjangAh.jpg"
-              />
+              <img alt="main feed" src="/images/HaeYongLee/JjangAh.jpg" />
             </div>
             <div className="articleCommu">
               <div className="commuStart">
@@ -160,25 +142,25 @@ function MainHaeYongLee() {
             </div>
             <div className="likeart">
               <img
-                alt="pro picture"
+                alt="pro"
                 src="/images/HaeYongLee/changsik-circle.png"
                 width="20px"
               />
-              <a href="#">
+              <a href="#!">
                 <p>changsik_kim</p>
               </a>
               <span>
-                님 외 <a href="#">여러명</a>이 좋아합니다
+                님 외 <a href="#!">여러명</a>이 좋아합니다
               </span>
             </div>
             <div className="commentArt">
               <div className="myFeed">
-                <a href="#">hey.yong44</a>
+                <a href="#!">hey.yong44</a>
                 <p>잘자는 댕댕이 짱아</p>
                 <span>더 보기</span>
               </div>
               <div className="yourComment">
-                <a href="#">changsik_kim</a>
+                <a href="#!">changsik_kim</a>
                 <p>귀엽네요~</p>
               </div>
               <ul id="todo-list" />
@@ -191,7 +173,9 @@ function MainHaeYongLee() {
                 <form id="comment">
                   <i className="fa-regular fa-face-smile fa-lg" />
                   <input type="text" placeholder="댓글 달기..." required />
-                  <button type="button">게시</button>
+                  <button type="button" className="buttonDisabled">
+                    게시
+                  </button>
                 </form>
               </div>
             </section>
@@ -199,14 +183,14 @@ function MainHaeYongLee() {
           <article>
             <div className="feedHeader">
               <div className="feedHeaderStart">
-                <a href="#">
+                <a href="#!">
                   <img
                     alt="header profile"
                     src="/images/HaeYongLee/websta_circle.png"
                     width="32px"
                   />
                 </a>
-                <a href="#">
+                <a href="#!">
                   <p>hey.yong44</p>
                 </a>
               </div>
@@ -216,7 +200,7 @@ function MainHaeYongLee() {
             </div>
             <div className="mainFeed">
               <img
-                alt="main feed picture"
+                alt="main feed"
                 src="/images/HaeYongLee/cherry_blossom.jpg"
               />
             </div>
@@ -232,25 +216,25 @@ function MainHaeYongLee() {
             </div>
             <div className="likeart">
               <img
-                alt="pro picture"
+                alt="pro"
                 src="/images/HaeYongLee/changsik-circle.png"
                 width="20px"
               />
-              <a href="#">
+              <a href="#!">
                 <p>changsik_kim</p>
               </a>
               <span>
-                님 외 <a href="#">여러명</a>이 좋아합니다
+                님 외 <a href="#!">여러명</a>이 좋아합니다
               </span>
             </div>
             <div className="commentArt">
               <div className="myFeed">
-                <a href="#">hey.yong44</a>
+                <a href="#!">hey.yong44</a>
                 <p>봄에는 역시 벚꽃 구경</p>
                 <span>더 보기</span>
               </div>
               <div className="yourComment">
-                <a href="#">changsik_kim</a>
+                <a href="#!">changsik_kim</a>
                 <p>저도 벚꽃 좋아하는데...</p>
               </div>
               <ul id="todo-list" />
@@ -272,15 +256,15 @@ function MainHaeYongLee() {
         <div className="main-right">
           <div className="fixedRight">
             <div className="rightMyProfile">
-              <a href="#">
+              <a href="#!">
                 <img
-                  alt="profile picture"
+                  alt="profile"
                   src="/images/HaeYongLee/websta_circle.png"
                   width="56px"
                 />
               </a>
               <div>
-                <a href="#">
+                <a href="#!">
                   <span>hey.yong44</span>
                 </a>
                 <div className="profileDescription">
@@ -291,16 +275,16 @@ function MainHaeYongLee() {
             <div className="rightStory">
               <div className="storyAll">
                 <p>스토리</p>
-                <a href="#">모두보기</a>
+                <a href="#!">모두보기</a>
               </div>
               <div className="storyPeople">
                 <img
-                  alt="profile picture"
+                  alt="profile"
                   src="/images/HaeYongLee/websta_circle.png"
                   width="32px"
                 />
                 <div className="inStory">
-                  <a href="#">
+                  <a href="#!">
                     <span>hey.yong44</span>
                   </a>
                   <span>1 시간전</span>
@@ -310,16 +294,16 @@ function MainHaeYongLee() {
             <div className="rightRecommendForYou">
               <div className="recommendAll">
                 <p>회원님을 위한 추천</p>
-                <a href="#">모두보기</a>
+                <a href="#!">모두보기</a>
               </div>
               <div className="recommendPeople">
                 <img
-                  alt="profile picture"
+                  alt="profile"
                   src="/images/HaeYongLee/websta_circle.png"
                   width="32px"
                 />
                 <div className="recommend">
-                  <a href="#">
+                  <a href="#!">
                     <span>hey.yong44</span>
                   </a>
                   <span>회원님을 팔로우합니다.</span>

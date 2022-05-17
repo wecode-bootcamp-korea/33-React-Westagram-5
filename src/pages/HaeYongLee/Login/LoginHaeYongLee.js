@@ -69,7 +69,7 @@ function LoginHaeYongLee() {
               </div>
             </div>
             <div className="fbLogin">
-              <a className="facebookLogin" href="#">
+              <a className="facebookLogin" href="#!">
                 <img
                   src="/images/HaeYongLee/facebookLogo.png"
                   width="14px"
@@ -78,7 +78,7 @@ function LoginHaeYongLee() {
                 Facebook으로 로그인
               </a>
             </div>
-            <a className="forgetPW" href="#">
+            <a className="forgetPW" href="#!">
               비밀번호를 잊으셨나요?
             </a>
           </div>

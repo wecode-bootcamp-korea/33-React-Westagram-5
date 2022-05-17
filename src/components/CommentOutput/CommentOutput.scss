@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+
+li {
+  display: flex;
+
+  span:nth-child(1) {
+    flex-grow: 0.3;
+    font-weight: bold;
+  }
+
+  span:nth-child(2) {
+    flex-grow: 10;
+  }
+
+  button {
+    color: gray;
+    background-color: white;
+    border: none;
+    flex-grow: 0.1;
+  }
+}

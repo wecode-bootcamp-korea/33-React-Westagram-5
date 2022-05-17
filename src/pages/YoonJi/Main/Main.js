@@ -13,7 +13,7 @@ function Main() {
             type="text"
             placeholder="검색"
             className="searchbar_westa"
-            maxlength="10"
+            maxLength="10"
           />
           <i className="fa-solid fa-magnifying-glass" />
           <div className="container_nav2" />
