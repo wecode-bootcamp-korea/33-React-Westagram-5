@@ -5,8 +5,8 @@ const Comment = props => {
     <div>
       {props.commentList.map(function (a) {
         return (
-          <li>
-            <b>Haim Chi :</b> {a}
+          <li className="commentSingleList">
+            <span className="haimChi">Haim Chi :</span> {a}
           </li>
         );
       })}

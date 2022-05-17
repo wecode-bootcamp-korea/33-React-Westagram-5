@@ -31,6 +31,7 @@
 
       .orangeIds {
         font-style: italic;
+        font-weight: bolder;
       }
     }
     .feedsBox {
@@ -56,6 +57,7 @@
         .myName {
           font-style: italic;
           margin-top: 5px;
+          font-weight: bolder;
         }
 
         .dot {
@@ -68,10 +70,24 @@
         height: 600px;
         margin: auto;
       }
+
+      .likes {
+        font-weight: bolder;
+        padding: 5px;
+      }
+
       .commentList {
         list-style-type: none;
         padding-left: 0;
         padding-bottom: 30px;
+
+        .commentSingleList {
+          padding: 5px;
+
+          .haimChi {
+            font-weight: bolder;
+          }
+        }
       }
       .commentBox {
         width: 600px;
@@ -113,6 +129,7 @@
           font-family: 'Ubuntu', sans-serif;
           font-style: italic;
           margin-top: 10px;
+          font-weight: bolder;
         }
 
         .innerRightBox2 {

@@ -35,12 +35,12 @@ function MainHaimNam() {
             src="https://images.unsplash.com/photo-1569084024058-1632922a4e1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=419&q=80"
             alt="gallery"
           />
-          <h3 className="likes">1218 Likes</h3>
+          <h3 className="likes">1218 Likes ❤️</h3>
           <ul className="commentList">
-            <li>
-              <b>Haim_Chi :</b> Found it difficult to leave the building once I
-              saw this amazing art. Amazing, interesting and joyful. “Art” is
-              fantastic!
+            <li className="commentSingleList">
+              <span className="haimChi">Haim_Chi :</span> Found it difficult to
+              leave the building once I saw this amazing art. Amazing,
+              interesting and joyful. “Art” is fantastic!
             </li>
             <Comment commentList={commentList} />
           </ul>
