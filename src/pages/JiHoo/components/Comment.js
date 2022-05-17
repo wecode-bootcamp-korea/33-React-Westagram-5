@@ -1,8 +1,15 @@
-const Comment = ({ comment }) => {
-  const { text, name } = comment;
+const Comment = ({ comment, handleDelete }) => {
+  const { text, name, id } = comment;
+
   return (
     <li>
-      {name} : {text}
+      <span>
+        {name} : {text}
+      </span>
+      <span>
+        <i class="fa-solid fa-heart" />
+        <i class="fa-solid fa-trash" onClick={() => handleDelete(id)} />
+      </span>
     </li>
   );
 };

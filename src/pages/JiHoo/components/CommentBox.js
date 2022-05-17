@@ -1,10 +1,10 @@
 import Comment from './Comment';
 
-const CommentBox = ({ comment }) => {
+const CommentBox = ({ comment, handleDelete }) => {
   return (
     <ul>
       {comment.map(com => (
-        <Comment key={com.id} comment={com} />
+        <Comment key={com.id} comment={com} handleDelete={handleDelete} />
       ))}
     </ul>
   );

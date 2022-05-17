@@ -154,9 +154,21 @@
           }
           .comment {
             padding-left: 10px;
-            li {
-              font-size: 14px;
-              padding-top: 3px;
+            ul {
+              li {
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+                padding-top: 3px;
+                i {
+                  position: relative;
+                  right: 10px;
+                  padding-right: 5px;
+                }
+                i:hover {
+                  cursor: pointer;
+                }
+              }
             }
           }
 

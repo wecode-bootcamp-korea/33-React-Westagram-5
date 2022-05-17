@@ -7,9 +7,11 @@ const MainJiHoo = () => {
   const nextId = useRef(1);
   const [value, setValue] = useState('');
   const [comment, setComment] = useState([]);
+
   const onChange = e => {
     setValue(e.target.value);
   };
+
   const onSubmit = e => {
     setComment([
       ...comment,
@@ -22,6 +24,9 @@ const MainJiHoo = () => {
     setValue('');
     nextId.current += 1;
     e.preventDefault();
+  };
+  const handleDelete = id => {
+    setComment(comment.filter(com => com.id !== id));
   };
 
   return (
@@ -71,12 +76,16 @@ const MainJiHoo = () => {
                     <span className="name">외 306명</span>이 좋아합니다
                   </div>
                   <div className="comment">
-                    <span className="name">jihoo</span> 청담 베스킨라빈스
-                    브라운에서~~ 더보기
-                    <br />
-                    <span className="name">dlwlrma</span> 다음에 같이가자~~~
-                    <CommentBox comment={comment} />
-                    <br /> 1시간전
+                    <ul>
+                      <li>&nbsp;jihoo 청담 베스킨라빈스 브라운에서~~ 더보기</li>
+                      <li>dlwlrma 다음에 같이가자~~~</li>
+                      <CommentBox
+                        comment={comment}
+                        setComment={setComment}
+                        handleDelete={handleDelete}
+                      />
+                      1시간전
+                    </ul>
                   </div>
                   <form className="comment_upload" onSubmit={onSubmit}>
                     <input
