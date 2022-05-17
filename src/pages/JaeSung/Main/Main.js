@@ -1,18 +1,25 @@
+/*eslint-disabled*/
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
 import React, { useState } from 'react';
+import Comment from '../../../components/Comment';
 
 function Mainjaesung() {
   const [comment, setComment] = useState('');
+
   const handleCommentInput = event => {
-    setComment(event.target.value);
+    const { value } = event.target;
+    setComment(value);
   };
+  // const handleCommentInput = event => {
+  //   setComment(event.target.value);
+  // };
   const [commentArray, setCommentArray] = useState([]);
+
   const onSubmit = event => {
     let copy = [...commentArray];
     copy.push(comment);
     setCommentArray(copy);
-
     setComment('');
   };
 
@@ -77,10 +84,10 @@ function Mainjaesung() {
                     </p>
                     <p className="post-time">20분전</p>
                     <div id="commentLists">
-                      {commentArray.map(function (a, i) {
+                      <Comment commentArray={commentArray} comment={comment} />
+                      {/* {commentArray.map(function (a, i) {
                         return <p>{commentArray[i]}</p>;
-                      })}
-                      ;
+                      })} */}
                     </div>
                   </div>
 
@@ -91,6 +98,11 @@ function Mainjaesung() {
                       placeholder="댓글을 입력하세요"
                       value={comment}
                       onChange={handleCommentInput}
+                      onKeyPress={function (e) {
+                        if (e.key === 'Enter') {
+                          onSubmit();
+                        }
+                      }}
                     />
                     <button className="comment-btn" onClick={onSubmit}>
                       게시

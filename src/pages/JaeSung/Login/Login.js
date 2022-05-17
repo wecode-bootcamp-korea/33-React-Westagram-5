@@ -15,12 +15,20 @@ function Loginjaesung() {
   const InputValue = id.includes('@') && pw.length >= 5;
 
   const handleIdIput = event => {
-    setId(event.target.value);
+    const { value } = event.target;
+    setId(value);
+  };
+  // const handleIdIput = event => {
+  //   setId(event.target.value);
+  // };
+  const handlePwInput = event => {
+    const { value } = event.target;
+    setPw(value);
   };
 
-  const handlePwInput = event => {
-    setPw(event.target.value);
-  };
+  // const handlePwInput = event => {
+  //   setPw(event.target.value);
+  // };
 
   return (
     <html className="loginhtml">
