@@ -24,7 +24,7 @@ function Mainjaesung() {
   };
 
   return (
-    <>
+    <div>
       <body className="mainbody">
         <div>
           <Nav />
@@ -167,7 +167,7 @@ function Mainjaesung() {
           </section>
         </div>
       </body>
-    </>
+    </div>
   );
 }
 

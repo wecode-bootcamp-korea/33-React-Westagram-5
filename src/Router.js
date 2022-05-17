@@ -12,7 +12,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import MainHaimNam from './pages/HaimNam/Main/MainHaimNam';
 import Loginjaesung from './pages/JaeSung/Login/Login';
 import Mainjaesung from './pages/JaeSung/Main/Main';
-import Nav from './components/Nav/Nav';
 
 const Router = () => {
   return (

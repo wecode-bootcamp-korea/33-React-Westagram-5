@@ -59,7 +59,7 @@ function Loginjaesung() {
             </div>
           </main>
           <span className="miss-password">
-            <a href="">비밀번호를 잊으셨습니까?</a>
+            <a href=" ">비밀번호를 잊으셨습니까?</a>
           </span>
         </div>
       </body>
