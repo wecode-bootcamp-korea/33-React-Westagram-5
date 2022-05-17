@@ -32,7 +32,7 @@
           @include flex-center;
           justify-content: space-between;
 
-          a {
+          .feedId {
             text-decoration: none;
             color: black;
             font-weight: bold;
@@ -90,7 +90,7 @@
         img {
           margin: 0.5rem;
         }
-        a {
+        .likeArtPeople {
           text-decoration: none;
           color: black;
           font-weight: bold;
@@ -105,7 +105,7 @@
           @include flex-center;
           height: 1.25rem;
 
-          a {
+          .feedMyId {
             text-decoration: none;
             color: black;
             font-weight: bold;
@@ -125,7 +125,7 @@
           @include flex-center;
           height: 1.25rem;
 
-          a {
+          .feedYourId {
             text-decoration: none;
             color: black;
             font-weight: bold;
@@ -227,13 +227,12 @@
         display: flex;
         flex-direction: column;
 
-        a {
+        .rightProfileMyId {
           text-decoration: none;
           color: black;
           font-weight: bold;
         }
       }
-
       .profileDescription {
         color: #c7c7c7;
 
@@ -260,7 +259,7 @@
           color: gray;
         }
 
-        a {
+        .seeAll {
           text-decoration: none;
           color: black;
         }
@@ -279,7 +278,7 @@
         color: #c7c7c7;
         font-size: 15px;
 
-        a {
+        .inStoryYourId {
           text-decoration: none;
           color: black;
           font-weight: bold;
@@ -305,7 +304,7 @@
           color: gray;
         }
 
-        a {
+        .seeAll {
           text-decoration: none;
           color: black;
         }
@@ -322,7 +321,7 @@
           color: #c7c7c7;
           font-size: 15px;
 
-          a {
+          .recommendYourId {
             text-decoration: none;
             color: black;
             font-weight: bold;

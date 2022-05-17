@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './LoginHaeYongLee.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
@@ -14,11 +14,13 @@ function LoginHaeYongLee() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const handleIdInput = event => {
-    setId(event.target.value);
+    const { value } = event.target;
+    setId(value);
   };
 
   const handlePwInput = event => {
-    setPw(event.target.value);
+    const { value } = event.target;
+    setPw(value);
   };
 
   const isInputValid = id.includes('@') && pw.length >= 5;
@@ -69,18 +71,18 @@ function LoginHaeYongLee() {
               </div>
             </div>
             <div className="fbLogin">
-              <a className="facebookLogin" href="#!">
+              <Link to="/Login-HaeYongLee" className="facebookLogin">
                 <img
                   src="/images/HaeYongLee/facebookLogo.png"
                   width="14px"
                   alt="facebook logo"
-                />{' '}
+                />
                 Facebook으로 로그인
-              </a>
+              </Link>
             </div>
-            <a className="forgetPW" href="#!">
+            <Link className="forgetPW" to="/Login-HaeYongLee">
               비밀번호를 잊으셨나요?
-            </a>
+            </Link>
           </div>
         </div>
       </div>
