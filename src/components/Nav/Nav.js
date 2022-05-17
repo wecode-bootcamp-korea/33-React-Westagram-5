@@ -12,23 +12,25 @@ function Nav() {
           type="text"
           placeholder="검색"
           className="searchbar_westa"
-          maxlength="10"
+          maxLength="10"
         />
         <i className="fa-solid fa-magnifying-glass" />
         <div className="container_nav2" />
       </div>
       <div className="container_nav2">
         <img
-          fo
           className="nav_img"
+          alt="navImg"
           src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
         />
         <img
           className="nav_img"
+          alt="navImg"
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
         />
         <img
           className="nav_img"
+          alt="navImg"
           src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
       "
         />

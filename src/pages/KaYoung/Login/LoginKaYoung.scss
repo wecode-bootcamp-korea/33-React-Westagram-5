@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
 .login_ky {
-  body {
-    background-color: #fafafa;
-  }
-
   .westaWrap {
-    display: flex;
-    flex-direction: column;
+    @include kyFlex;
     align-items: center;
     margin: 3.5rem auto;
     padding: 10px 0px;
@@ -31,8 +27,7 @@
   form {
     width: 76%;
     padding: 0 24px;
-    display: flex;
-    flex-direction: column;
+    @include kyFlex;
     .login_id {
       box-sizing: border-box;
       border: 1px solid #dcdcdc;

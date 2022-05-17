@@ -1,13 +1,13 @@
-import './Comment.scss';
-import CommentItem from './CommentItem';
+import '../../components/Comments/Comment.scss';
+import CommentItem from '../../components/Comments/CommentItem';
 
 function Comment({ comment }) {
   return (
-    <ul id="comment-list">
+    <div id="comment-list">
       {comment.map(com => (
         <CommentItem key={com.id} comment={com.text} />
       ))}
-    </ul>
+    </div>
   );
 }
 

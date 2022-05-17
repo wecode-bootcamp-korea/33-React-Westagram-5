@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login_KaYoung from './pages/KaYoung/Login/LoginKaYoung';
-import Main_kaYoung from './pages/KaYoung/Main/MainKaYoung';
+import LoginKaYoung from './pages/KaYoung/Login/LoginKaYoung';
+import MainKaYoung from './pages/KaYoung/Main/MainKaYoung';
 /*import MainKaYoung from './pages/KaYoung/Main/MainKaYoung';
 import LoginYoonJi from './pages/YoonJi/Login/LoginYoonJi';
 import MainYoonJi from './pages/YoonJi/Main/MainYoonJi';
@@ -18,8 +18,8 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login-kayoung" element={<Login_KaYoung />} />
-        <Route path="/main-kayoung" element={<Main_kaYoung />} />
+        <Route path="/login-kayoung" element={<LoginKaYoung />} />
+        <Route path="/main-kayoung" element={<MainKaYoung />} />
         {/* <Route path="/login-yoonji" element={<LoginYoonJi />} />
         <Route path="/main-yoonji" element={<MainYoonJi />} />
         <Route path="/login-JiHoo" element={<LoginJiHoo />} />

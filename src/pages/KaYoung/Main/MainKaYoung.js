@@ -1,19 +1,19 @@
 import './MainKaYoung.scss';
 import Nav from '../../../components/Nav/Nav';
-import Comment from './Commnet';
+import Comment from '../../../components/Comments/Comment';
+import '../../../styles/common.scss';
 import { useState, useRef } from 'react';
 
-function Main_kaYoung() {
-  const [value, setValue] = useState('');
-  const [comment, setComment] = useState([]);
-  const nextId = useRef(0);
+function MainKaYoung() {
+  const [value, setValue] = useState(''); // value값을 저장해줌
+  const [comment, setComment] = useState([]); // 들어온 value 값을 배열로 만들어준다.
+  const nextId = useRef(0); // 아이디의 useRef에 0을 할당하면서 초기화해준다.
   const onChange = e => {
-    setValue(e.target.value);
+    setValue(e.target.value); // input에 값이 들어오면,(onChange에 e(이벤트)가 들어오면)
   };
-
   const onSubmit = e => {
     setComment([
-      ...comment,
+      ...comment, // ...comment의 의미는 기존 comment의 모든 원소를 그대로 가져오고 그 뒤에 key,value값에  새로추가한 배열을 할당.
       {
         id: nextId.current,
         text: value,
@@ -24,40 +24,28 @@ function Main_kaYoung() {
     e.preventDefault();
   };
 
+  // const [value, setValue] = useState('');
+  // const [comment, setComment] = useState([]);
+  // const nextId = useRef(0);
+  // const onChange = e => {
+  //   setValue(e.target.value);
+  // };
+
+  // const onSubmit = e => {
+  //   setComment([
+  //     ...comment,
+  //     {
+  //       id: nextId.current,
+  //       text: value,
+  //     },
+  //   ]);
+  //   nextId.current += 1;
+  //   setValue('');
+  //   e.preventDefault();
+  // };
+
   return (
     <div className="main_ky">
-      {/* <nav className="westa_nav">
-        <div className="container_nav1">
-          <i className="fa-brands fa-instagram fa-2x" />
-          <h1 className="westagram_head">Westagram</h1>
-        </div>
-        <div className="westa_search">
-          <input
-            type="text"
-            placeholder="검색"
-            className="searchbar_westa"
-            maxlength="10"
-          />
-          <i className="fa-solid fa-magnifying-glass" />
-          <div className="container_nav2" />
-        </div>
-        <div className="container_nav2">
-          <img
-            fo
-            className="nav_img"
-            src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-          />
-          <img
-            className="nav_img"
-            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-          />
-          <img
-            className="nav_img"
-            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
-      "
-          />
-        </div>
-      </nav> */}
       <Nav />
 
       <main className="westa_main">
@@ -79,12 +67,13 @@ function Main_kaYoung() {
             <div className="feeds_image">
               <img
                 className="feeds_img"
+                alt="feedsImg"
                 src="https://images.unsplash.com/photo-1651232298012-d61ab5437bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
               />
             </div>
             <div className="icon_reaction">
               <div className="reaction_left">
-                <button onclick="Toggle1()" className="heartBtn" id="btn1">
+                <button className="heart_btn " id="btn1">
                   <i className="fa-regular fa-heart" />
                 </button>
                 <i className="fa-regular fa-comment fa-lg" />
@@ -98,6 +87,7 @@ function Main_kaYoung() {
               <div className="like_people">
                 <img
                   className="picture"
+                  alt="pictureImg"
                   src="https://images.unsplash.com/photo-1651522356854-624fcd9dc3da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 />
                 <p>
@@ -116,10 +106,11 @@ function Main_kaYoung() {
                 <div className="time_log">
                   <span className="log_comment">20분 전</span>
                 </div>
+
                 <Comment comment={comment} />
                 <form
                   id="comment-form"
-                  className="commentFormClass"
+                  className="comment_form_class"
                   onSubmit={onSubmit}
                 >
                   <input
@@ -278,4 +269,4 @@ function Main_kaYoung() {
   );
 }
 
-export default Main_kaYoung;
+export default MainKaYoung;

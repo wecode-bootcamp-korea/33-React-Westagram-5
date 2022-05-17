@@ -3,13 +3,13 @@ const CommentItem = ({ comment }) => {
     <li>
       <div className="comment_text">
         <span>
-          <span className="point-span userID">justin_beboy</span>
+          <span className="point-span userID">camille</span>
           {comment}
         </span>
       </div>
 
       <div className="comment_like">
-        <button onclick="Toggle2()" className="heartBtn2" id="btn2">
+        <button className="heart_btn2" id="btn2">
           <i className="fa-regular fa-heart" />
         </button>
       </div>

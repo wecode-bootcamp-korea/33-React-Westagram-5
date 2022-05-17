@@ -1,3 +1,4 @@
-* {
-  box-sizing: border-box;
+@mixin kyFlex {
+  display: flex;
+  flex-direction: column;
 }
