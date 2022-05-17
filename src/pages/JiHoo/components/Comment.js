@@ -7,7 +7,7 @@ const Comment = ({ comment, handleDelete }) => {
         {name} : {text}
       </span>
       <span>
-        <i class="fa-solid fa-heart" />
+        <i class="fa-regular fa-heart" />
         <i class="fa-solid fa-trash" onClick={() => handleDelete(id)} />
       </span>
     </li>

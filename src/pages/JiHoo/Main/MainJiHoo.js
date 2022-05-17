@@ -13,16 +13,18 @@ const MainJiHoo = () => {
   };
 
   const onSubmit = e => {
-    setComment([
-      ...comment,
-      {
-        id: nextId.current,
-        text: value,
-        name: 'dlwlrma',
-      },
-    ]);
-    setValue('');
-    nextId.current += 1;
+    if (value.length > 0) {
+      setComment([
+        ...comment,
+        {
+          id: nextId.current,
+          text: value,
+          name: 'dlwlrma',
+        },
+      ]);
+      setValue('');
+      nextId.current += 1;
+    }
     e.preventDefault();
   };
   const handleDelete = id => {
@@ -84,7 +86,7 @@ const MainJiHoo = () => {
                         setComment={setComment}
                         handleDelete={handleDelete}
                       />
-                      1시간전
+                      <li>1시간전</li>
                     </ul>
                   </div>
                   <form className="comment_upload" onSubmit={onSubmit}>

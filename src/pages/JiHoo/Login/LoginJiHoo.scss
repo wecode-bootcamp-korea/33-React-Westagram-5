@@ -20,8 +20,8 @@ $border-style: 2px solid rgba(239, 239, 239, 0.5);
     margin: 12px;
 
     .login_Title {
-      position: absolute;
-      top: 200px;
+      position: relative;
+      bottom: 40px;
       font-family: 'Lobster', cursive;
       font-size: 40px;
     }
