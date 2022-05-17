@@ -38,30 +38,35 @@ function MainHaimNam() {
           <h3 className="likes">1218 Likes</h3>
           <ul className="commentList">
             <li>
-              <i>Haim_Chi</i> Found it difficult to leave the building once I
+              <b>Haim_Chi :</b> Found it difficult to leave the building once I
               saw this amazing art. Amazing, interesting and joyful. “Art” is
               fantastic!
             </li>
             <Comment commentList={commentList} />
           </ul>
-          <input
-            className="commentBox"
-            type="text"
-            placeholder="Add a Comment"
-            onChange={e => {
-              setInputValue(e.target.value);
-            }}
-          />
-          <button
-            className="commentBtn"
-            onClick={() => {
-              let copy = [...commentList];
-              copy.push(inputValue);
-              setCommentList(copy);
-            }}
-          >
-            Post
-          </button>
+          <form>
+            <input
+              className="commentBox"
+              type="text"
+              placeholder="Add a Comment"
+              value={inputValue}
+              onChange={e => {
+                setInputValue(e.target.value);
+              }}
+            />
+            <button
+              className="commentBtn"
+              onClick={e => {
+                let copy = [...commentList];
+                copy.push(inputValue);
+                setCommentList(copy);
+                setInputValue('');
+                e.preventDefault();
+              }}
+            >
+              Post
+            </button>
+          </form>
         </div>
 
         <div className="main-rightBox">
