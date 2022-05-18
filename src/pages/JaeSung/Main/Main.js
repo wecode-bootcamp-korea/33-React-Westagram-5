@@ -1,10 +1,16 @@
 /*eslint-disabled*/
 import './Main.scss';
 import Nav from '../../../components/Nav/Nav';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Comment from '../../../components/Comment';
 
 function Mainjaesung() {
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json')
+      .then(res => res.json())
+      .then(data => setComment(data));
+  }, []);
+
   const [comment, setComment] = useState('');
 
   const handleCommentInput = event => {

@@ -5,8 +5,21 @@ import { useNavigate } from 'react-router-dom';
 
 function Loginjaesung() {
   const navigate = useNavigate();
-
   const goTomain = () => {
+    fetch('http://10.58.3.119:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log('결과:', result);
+        if (result.ACCESS_TOKEN) {
+          localStorage.setItem('token', result.ACCESS_TOKEN);
+        }
+      });
     navigate('/main-Jaesung');
   };
   const [id, setId] = useState('');
@@ -28,6 +41,24 @@ function Loginjaesung() {
 
   // const handlePwInput = event => {
   //   setPw(event.target.value);
+  // };
+
+  // const loginApi = () => {
+  //   fetch('http://10.58.3.119:8000/users/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: id,
+  //       password: pw,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => console.log('결과: ', result))
+  //     .then(response => {
+  //       if (response.ACCESS_TOKEN) {
+  //         localStorage.setItem('token', response.ACCESS_TOKEN);
+  //       }
+  //     });
+  //   navigate('/main-Jaesung');
   // };
 
   return (
