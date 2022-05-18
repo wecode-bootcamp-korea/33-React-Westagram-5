@@ -1,40 +1,101 @@
 //import React from 'react';
 import './Login.scss';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Loginjaesung() {
+  const navigate = useNavigate();
+  const goTomain = () => {
+    fetch('http://10.58.3.119:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log('결과:', result);
+        if (result.ACCESS_TOKEN) {
+          localStorage.setItem('token', result.ACCESS_TOKEN);
+        }
+      });
+    navigate('/main-Jaesung');
+  };
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const InputValue = id.includes('@') && pw.length >= 5;
+
+  const handleIdIput = event => {
+    const { value } = event.target;
+    setId(value);
+  };
+  // const handleIdIput = event => {
+  //   setId(event.target.value);
+  // };
+  const handlePwInput = event => {
+    const { value } = event.target;
+    setPw(value);
+  };
+
+  // const handlePwInput = event => {
+  //   setPw(event.target.value);
+  // };
+
+  // const loginApi = () => {
+  //   fetch('http://10.58.3.119:8000/users/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: id,
+  //       password: pw,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => console.log('결과: ', result))
+  //     .then(response => {
+  //       if (response.ACCESS_TOKEN) {
+  //         localStorage.setItem('token', response.ACCESS_TOKEN);
+  //       }
+  //     });
+  //   navigate('/main-Jaesung');
+  // };
+
   return (
-    <div className="login">
-      <body>
-        <div className="westaWrap">
-          <header className="westa">Westagram</header>
-          <form id="login_form" action="">
-            <input
-              type="text"
-              className="login_id"
-              id="id_field"
-              placeholder="전화번호, 사용자 이름 또는 이메일"
-            />
-            <input
-              type="password"
-              className="login_pw"
-              id="pw_field"
-              placeholder="비밀번호"
-            />
-            <Link to="/main">
-              <button type="submit" className="login_btn">
+    <html className="loginhtml">
+      <body className="loginbody">
+        <div className="login-background">
+          <main className="container">
+            <span className="logo">westagram</span>
+            <div className="input-box">
+              <input
+                className="login-input"
+                type="text"
+                placeholder="전화번호, 사용자 이름 또는 이메일"
+                onChange={handleIdIput}
+              />
+              <input
+                className="password-input"
+                type="password"
+                placeholder="비밀번호"
+                onChange={handlePwInput}
+              />
+              <button
+                className={InputValue ? 'login-button' : 'login-buttonDisabled'}
+                onClick={goTomain}
+                disabled={InputValue ? false : true}
+              >
                 로그인
               </button>
-            </Link>
-          </form>
-          <footer className="login_footer">
-            <a href="">비밀번호 잊으셨나요?</a>
-          </footer>
+            </div>
+          </main>
+          <span className="miss-password">
+            <a href=" ">비밀번호를 잊으셨습니까?</a>
+          </span>
         </div>
       </body>
-    </div>
+    </html>
   );
 }
 
-export default Login;
+export default Loginjaesung;

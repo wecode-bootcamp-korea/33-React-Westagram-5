@@ -1,86 +1,115 @@
-.login {
-  @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+  box-sizing:border-box;
+}
 
-  body {
-    background-color: #fafafa;
-  }
+.loginhtml{
+  height: 800px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAFAFA
 
-  .westa {
-    background-color: #ffffff;
-    font-family: 'Lobster', cursive;
-    color: #24292f;
-    font-size: 4.6rem;
-    font-weight: 400;
-    text-align: center;
-    line-height: 4rem;
-    letter-spacing: -1px;
-    margin-top: 3rem;
-    margin-bottom: 80px;
-  }
+}
+.loginbody{
+  height: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-background{
+  background-color: #fff;
+  border:solid 1px #dbdbdb;
+  height: 450px;
+  width: 400px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 8px;
+}
+.container{
+  background-color: #fff;
+  height: 300px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-  .westaWrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 3.5rem auto;
-    padding: 10px 0px;
-    width: 670px;
-    height: 700px;
-    border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
-  }
 
-  form {
-    width: 76%;
-    padding: 0 24px;
-    display: flex;
-    flex-direction: column;
-  }
+      .logo{ 
+        margin-bottom: 50px;
+        font-size: 58px;
+        font-family: 'Lobster', cursive;
+      
 
-  input.login_id {
-    box-sizing: border-box;
-    border: 1px solid #dcdcdc;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    padding-left: 12px;
-    height: 70px;
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(180, 180, 180);
-    background-color: #fafafa;
-  }
-  input.login_pw {
-    box-sizing: border-box;
-    border: 1px solid #dcdcdc;
-    margin-bottom: 24px;
-    border-radius: 3px;
-    padding-left: 12px;
-    height: 70px;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #fafafa;
-  }
+      }
+  
 
-  .login_btn {
-    box-sizing: border-box;
-    margin-bottom: 230px;
-    border-radius: 5px;
-    padding-left: 10px;
-    height: 55px;
-    font-size: 23px;
-    border: 1px solid transparent;
-    color: white;
-    font-weight: bold;
-    background-color: #afdcf9;
-  }
+      .input-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
 
-  input::placeholder {
-    color: rgb(180, 179, 179);
-  }
+            .login-input{
+              margin-bottom: 15px;
+              width:270px;
+              height: 35px;
+              border-radius: 4px;
+              border:solid 2px #dbdbdb;
+              padding-left: 10px;
+              background-color: #f3f2f2;;
+              }
+            .password-input{
+              width:270px;
+              height: 35px;
+              margin-bottom: 20px;
+              border:solid 2px #dbdbdb;
+              border-radius: 4px;
+              padding-left: 10px;
+              background-color: #f3f2f2;
+            }
+            .login-button{
+              width:100%;
+              height: 30px;
+              background-color:#0095f6;
+              border-radius:6px;
+              border:solid 0px ;
+              color:white;
+              font-size: 15px;
+              margin-top: 10px;
+              
+            }
+            .login-buttonDisabled{
+              width:100%;
+              height: 30px;
+              background-color: #9aafdb;
+              border-radius:6px;
+              border:solid 0px ;
+              color:white;
+              font-size: 15px;
+              margin-top: 10px;
+            }
+          }
+        }
 
-  a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
-    color: #385185;
-  }
+.miss-password{
+  margin-bottom: 20px;
+  font-size: 13px;
+  
+
+}
+a{
+  text-decoration: none;
+  color:#0095f6;
+}
+
+button:hover{
+  cursor: pointer;
+  background-color: #dbdbdb;
 }
