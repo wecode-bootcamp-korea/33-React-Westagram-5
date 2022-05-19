@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Loginjaesung() {
   const navigate = useNavigate();
+  // FIXME: 문맥 분리, 순서
   const goTomain = () => {
     fetch('http://10.58.3.119:8000/users/signin', {
       method: 'POST',
@@ -22,12 +23,17 @@ function Loginjaesung() {
       });
     navigate('/main-Jaesung');
   };
+  // FIXME: status code
+
+
+  // FIXME: 공통된 관심사는 하나의 state
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
 
   const InputValue = id.includes('@') && pw.length >= 5;
 
   const handleIdIput = event => {
+    // FIXME: 한번만 사용할 경우 구조분해할당안해도 됨
     const { value } = event.target;
     setId(value);
   };
@@ -39,6 +45,7 @@ function Loginjaesung() {
     setPw(value);
   };
 
+  // FIXME: comment
   // const handlePwInput = event => {
   //   setPw(event.target.value);
   // };
@@ -61,6 +68,7 @@ function Loginjaesung() {
   //   navigate('/main-Jaesung');
   // };
 
+  // FIXME: html, body, top level className
   return (
     <html className="loginhtml">
       <body className="loginbody">
@@ -83,6 +91,7 @@ function Loginjaesung() {
               <button
                 className={InputValue ? 'login-button' : 'login-buttonDisabled'}
                 onClick={goTomain}
+                // FIXME: 삼항연산자 true false
                 disabled={InputValue ? false : true}
               >
                 로그인

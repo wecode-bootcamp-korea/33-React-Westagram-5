@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Comment from '../../../components/Comment';
 
 function Mainjaesung() {
+  // FIXME: string에서 array?
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json')
       .then(res => res.json())
@@ -20,9 +21,14 @@ function Mainjaesung() {
   // const handleCommentInput = event => {
   //   setComment(event.target.value);
   // };
+
+  // FIXME: Array, Object 등의 이름은 지양
   const [commentArray, setCommentArray] = useState([]);
 
+  // FIXME: 불필요한 매개변수
+  // FIXME: 함수명
   const onSubmit = event => {
+    // FIXME: 변수명
     let copy = [...commentArray];
     copy.push(comment);
     setCommentArray(copy);
@@ -38,8 +44,10 @@ function Mainjaesung() {
             <div className="wrapper">
               <div className="left-col">
                 <div className="status-wrapper">
+                  {/* FIXME: 반복되는 UI -> Array.map */}
                   <div className="status-card">
                     <div className="profile-pic">
+                      {/* FIXME: alt prop */}
                       <img src="/images/메시.jpeg" alt="" />
                       <p className="username">leonel_messi</p>
                     </div>
@@ -89,6 +97,7 @@ function Mainjaesung() {
                       <span>jungnaldo</span> 놀러가고싶다~!!
                     </p>
                     <p className="post-time">20분전</p>
+                    {/* FIXME: id X */}
                     <div id="commentLists">
                       <Comment commentArray={commentArray} comment={comment} />
                       {/* {commentArray.map(function (a, i) {
