@@ -7,11 +7,13 @@ import { useState, useRef } from 'react';
 function MainKaYoung() {
   const [value, setValue] = useState(''); // value값을 저장해줌
   const [comment, setComment] = useState([]); // 들어온 value 값을 배열로 만들어준다.
+  // FIXME: useRef를 쓰는 이유?
   const nextId = useRef(0); // 아이디의 useRef에 0을 할당하면서 초기화해준다.
   const onChange = e => {
     setValue(e.target.value); // input에 값이 들어오면,(onChange에 e(이벤트)가 들어오면)
   };
   const onSubmit = e => {
+    // FIXME: setState function update
     setComment([
       ...comment, // ...comment의 의미는 기존 comment의 모든 원소를 그대로 가져오고 그 뒤에 key,value값에  새로추가한 배열을 할당.
       {
@@ -144,6 +146,7 @@ function MainKaYoung() {
                 <span className="sub_span">LEELEE | HI</span>
               </div>
             </div>
+            {/* FIXME: 반복되는 UI는 데이터 + Array.map 활용 */}
             <div className="story_section">
               <div className="menu_title">
                 <span className="sub_title">스토리</span>

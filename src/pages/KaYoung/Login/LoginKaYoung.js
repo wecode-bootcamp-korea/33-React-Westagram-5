@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './LoginKaYoung.scss';
-//import React { useState } from 'react';
+// import React { useState } from 'react';
 import { Link } from 'react-router-dom';
 //import { configs } from 'eslint-plugin-prettier';
 
 function LoginKaYoung() {
   //로그인 사용자 데이터 + 버튼 활성화
+  // FIXME: 동일한 관심사는 하나의 state로
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const isValid = id.includes('@') && 5 <= pw.length;
@@ -21,6 +22,7 @@ function LoginKaYoung() {
     <div className="login_ky">
       <div className="westaWrap">
         <header className="westa">Westagram</header>
+        {/* FIXME: no id attribute */}
         <form id="login_form" action="">
           <input
             type="text"
@@ -42,6 +44,7 @@ function LoginKaYoung() {
           >
             <button
               type="submit"
+              // FIXME: 삼항연산자 true false
               disabled={isValid ? true : false}
               className="login_btn1"
             >
