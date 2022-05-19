@@ -15,6 +15,7 @@ function MainHaimNam() {
           <img
             className="circleOrange"
             src="/images/HaimNam/갤러리 로고.png"
+            // FIXME: alt prop은 일반 문법에 맞게
             alt="galleryLogo"
           />
           <span className="orangeIds">Wecode Gallery</span>
@@ -57,12 +58,14 @@ function MainHaimNam() {
             <button
               className="commentBtn"
               onClick={e => {
+                // FIXME: 변수명, 선언할 때 한번에
                 let copy = [...commentList];
                 copy.push(inputValue);
                 setCommentList(copy);
                 setInputValue('');
                 e.preventDefault();
               }}
+              {/* FIXME: 함수 선언해서 쓰기 */}
             >
               Post
             </button>
