@@ -1,3 +1,11 @@
+@import './variables.scss';
+
 * {
   box-sizing: border-box;
+}
+
+hr {
+  height: 1px;
+  background-color: $theme-color2;
+  border: none;
 }

@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
+
+.mainHY {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-top: 4rem;
+
+  .feeds {
+    height: 100%;
+    margin-right: 28px;
+    width: 614px;
+    position: relative;
+
+    article {
+      margin-top: 36px;
+      width: 614px;
+      background-color: white;
+      border: $border-style;
+      height: 100%;
+
+      .feedHeader {
+        border: $border-style;
+        height: 70px;
+        @include flex-center;
+        justify-content: space-between;
+
+        .feedHeaderStart {
+          width: 8.5rem;
+          margin-left: 10px;
+          @include flex-center;
+          justify-content: space-between;
+
+          .feedId {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+        }
+
+        .feedHeaderEnd {
+          @include flex-center;
+          justify-content: flex-end;
+          margin-right: 10px;
+        }
+      }
+
+      .mainFeed {
+        width: 614px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .articleCommu {
+        display: flex;
+        height: 54px;
+        justify-content: space-between;
+        margin: 0 10px;
+
+        .commuStart {
+          width: 7rem;
+          @include flex-center;
+          justify-content: space-between;
+          margin-left: 7px;
+
+          i {
+            width: 24px;
+          }
+        }
+
+        .commuEnd {
+          width: 6rem;
+          @include flex-center;
+          justify-content: flex-end;
+          margin-right: 7px;
+
+          i {
+            width: 24px;
+          }
+        }
+      }
+
+      .likeart {
+        height: 20px;
+        @include flex-center;
+        margin-left: 10px;
+
+        img {
+          margin: 0.5rem;
+        }
+        .likeArtPeople {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+      }
+      .commentArt {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        .myFeed {
+          @include flex-center;
+          height: 1.25rem;
+
+          .feedMyId {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+
+          p {
+            margin-left: 7px;
+          }
+
+          span {
+            font-size: 0.75rem;
+            color: lightgray;
+          }
+        }
+
+        .yourComment {
+          @include flex-center;
+          height: 1.25rem;
+
+          .feedYourId {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+
+          p {
+            margin-left: 7px;
+          }
+        }
+
+        .todo-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            display: flex;
+
+            span:nth-child(1) {
+              flex-grow: 0.3;
+              font-weight: bold;
+            }
+
+            span:nth-child(2) {
+              flex-grow: 10;
+            }
+
+            button {
+              color: gray;
+              background-color: white;
+              border: none;
+              flex-grow: 0.1;
+            }
+          }
+        }
+      }
+
+      .ago {
+        text-align: start;
+        color: lightgray;
+        font-size: 0.75rem;
+        margin-left: 1rem;
+      }
+
+      .commentSection {
+        border-top: $border-style;
+        height: 53px;
+        display: flex;
+        width: 100%;
+
+        #comment {
+          @include flex-center;
+          justify-content: space-around;
+          margin: auto;
+          i {
+            margin: 0 0.25rem;
+          }
+          input {
+            width: 30rem;
+            border: none;
+          }
+          .buttonDisabled {
+            border: none;
+            background-color: white;
+            width: 2.75rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: lightgray;
+          }
+          .buttonEnabled {
+            border: none;
+            background-color: white;
+            width: 2.75rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: rgb(184, 184, 232);
+          }
+        }
+      }
+    }
+  }
+
+  .main-right {
+    margin-top: 36px;
+    width: 293px;
+    position: relative;
+    right: 1.5rem;
+
+    .fixedRight {
+      position: fixed;
+      width: 293px;
+    }
+
+    .rightMyProfile {
+      display: flex;
+
+      div {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .rightProfileMyId {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+      }
+      .profileDescription {
+        color: #c7c7c7;
+
+        span {
+          margin-left: -0.6rem;
+        }
+      }
+    }
+
+    .rightStory {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      border: $border-style;
+      background-color: white;
+
+      .storyAll {
+        @include flex-center;
+        justify-content: space-between;
+        font-size: 14px;
+        padding: 0.5rem;
+
+        p {
+          color: gray;
+        }
+
+        .seeAll {
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      .storyPeople {
+        display: flex;
+        color: #c7c7c7;
+        margin-left: 5px;
+      }
+
+      .inStory {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        color: #c7c7c7;
+        font-size: 15px;
+
+        .inStoryYourId {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .rightRecommendForYou {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      margin: 10px 0;
+      border: $border-style;
+      background-color: white;
+
+      .recommendAll {
+        @include flex-center;
+        justify-content: space-between;
+        margin: 0.5rem;
+        font-size: 14px;
+
+        p {
+          color: gray;
+        }
+
+        .seeAll {
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      .recommendPeople {
+        display: flex;
+        margin-left: 5px;
+
+        .recommend {
+          display: flex;
+          flex-direction: column;
+          margin-left: 10px;
+          color: #c7c7c7;
+          font-size: 15px;
+
+          .recommendYourId {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .likeFooter {
+      margin: 10px 0;
+      color: #c7c7c7;
+    }
+  }
+}

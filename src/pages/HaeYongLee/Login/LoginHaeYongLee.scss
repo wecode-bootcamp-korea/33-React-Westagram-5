@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
+
+.loginSection {
+  @include flex-center-center;
+  height: 100vh;
+  text-align: center;
+
+  .login {
+    padding: 10px 0;
+
+    .loginBorder {
+      width: 348px;
+      height: 374px;
+      border: $border-style;
+      background-color: #ffffff;
+      margin-bottom: 10px;
+      padding: 10px 0;
+
+      .westa {
+        margin: 16px 0 12px 0;
+
+        span {
+          width: 175px;
+          height: 51px;
+          color: black;
+          font-size: 50px;
+          font-family: lobster;
+        }
+      }
+
+      .westsaLogin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .inputID,
+        .inputPW {
+          width: 268px;
+          height: 38px;
+          border: $border-style;
+          background-color: $theme-color;
+          margin-bottom: 5px;
+
+          .westaID,
+          .westaPW {
+            width: 258px;
+            height: 36px;
+            display: flex;
+            border: none;
+            background-color: #fafafa;
+          }
+        }
+
+        .buttonLogin {
+          @include buttonShape;
+          background-color: #0095f6;
+        }
+
+        .buttonLoginDisabled {
+          @include buttonShape;
+          background-color: #b2dffc;
+        }
+
+        .orStick {
+          display: flex;
+          margin: 10px 40px;
+          width: 268px;
+          justify-content: space-between;
+        }
+
+        .stick {
+          width: 110px;
+        }
+
+        .or {
+          color: $theme-color2;
+          font-size: 13px;
+        }
+
+        .fbLogin {
+          width: 268px;
+          height: 20;
+
+          .facebookLogin {
+            font-size: 14px;
+            color: #385185;
+            text-decoration: none;
+          }
+        }
+
+        .forgetPW {
+          font-size: 13px;
+          width: 346px;
+          height: 16px;
+          margin-top: 12px;
+          color: #00376b;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
