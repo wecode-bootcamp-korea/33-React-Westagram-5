@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userName": "I.like.U",
+    "content": "복순이 몇 살이야?",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userName": "shimeeya",
+    "content": "한 번 더 보러갈게",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "userName": "Haruna",
+    "content": "Hey!",
+    "isLiked": false
+  }
+]

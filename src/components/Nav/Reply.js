@@ -1,21 +1,20 @@
 import './Reply.scss';
 
 function Reply(props) {
-  const {replies, deleteBtn } = props;
+  const { replies, deleteBtn } = props;
   return (
     <>
       <ul className="reply">
-        {replies.map((item, index) => (
-          <li key={index}>
+        {replies.map(replie => (
+          <li key={replie.id}>
             <div>
-              <span>I.like.U</span>
-              {item}
+              <span>{replie.userName}</span>
+              {replie.content}
             </div>
             <button onClick={deleteBtn}>❌</button>
           </li>
         ))}
       </ul>
-     
     </>
   );
 }

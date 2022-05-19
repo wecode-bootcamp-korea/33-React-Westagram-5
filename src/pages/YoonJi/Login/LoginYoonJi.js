@@ -31,20 +31,28 @@ function LoginYoonji() {
     //     .then(response => response.json())
     //     .then(result => console.log('결과: ', result));
     // };
-    fetch('http://10.58.4.15:8000/users/login', {
-      method: 'POST',
-      body: JSON.stringify({
-        id: id,
-        pw: pw,
-      }),
-    })
-      .then(response => response.json())
-      .then(response => {
-        if (response.access_token) {
-          localStorage.setItem('token', response.access_token);
-        }
-      });
+    // fetch('http://10.58.4.15:8000/users/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     id: id,
+    //     pw: pw,
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(response => {
+    //     if (response.access_token) {
+    //       // localStorage에 토큰 저장
+    //       localStorage.setItem('token', response.access_token);
+    goToMain();
+    //   }
+    // });
   };
+
+  // localStorage에서 token 가져오기
+  let token = localStorage.getItem('token') || '';
 
   return (
     <>

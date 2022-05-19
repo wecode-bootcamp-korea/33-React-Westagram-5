@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "userProfile": "./images/YoonJi/face.jpg",
+    "userName": "syj3367",
+    "content": "복순이가 탈출해서 이불에 들어옴",
+    "src": "./images/YoonJi/snake.jpg"
+  },
+  {
+    "id": 2,
+    "userProfile": "//source.unsplash.com/random/4",
+    "userName": "Haruna",
+    "content": "Welcome to Japan!",
+    "src": "./images/YoonJi/sakura.jpg"
+  },
+  {
+    "id": 3,
+    "userProfile": "//source.unsplash.com/random/5",
+    "userName": "shimeeya",
+    "content": "우동집 갔다 옴",
+    "src": "./images/YoonJi/udon.jpg"
+  }
+]

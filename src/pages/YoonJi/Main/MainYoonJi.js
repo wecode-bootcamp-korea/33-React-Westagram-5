@@ -1,25 +1,57 @@
 import './MainYoonJi.scss';
+// import { useState, useEffect, useRef } from 'react';
+// import Reply from '../../../components/Nav/Reply';
+import Feed from '../../../components/Nav/Feed';
 import { useState, useEffect } from 'react';
-import Reply from '../../../components/Nav/Reply';
 
 // import React from "react";
 
 function MainYoonji() {
-  const [reply, setReply] = useState('');
-  const [replies, setReplies] = useState([]);
-  const onChange = event => setReply(event.target.value);
-  const onSubmit = event => {
-    event.preventDefault();
-    if (reply === '') {
-      return;
-    }
-    setReplies(currentArray => [...currentArray, reply]);
-    setReply('');
-  };
-  const deleteBtn = event => {
-    const li = event.target.parentElement;
-    li.remove();
-  };
+  const [feed, setFeed] = useState([]);
+
+  useEffect(() => {
+    fetch('data/feedData.json')
+      .then(res => res.json())
+      .then(data => {
+        setFeed(data);
+      });
+  }, []);
+  // const [reply, setReply] = useState('');
+  // const [replies, setReplies] = useState([]);
+  // const nextId = useRef(4);
+  // const onChange = event => setReply(event.target.value);
+  // const onSubmit = event => {
+  //   event.preventDefault();
+  //   if (reply === '') {
+  //     return;
+  //   }
+  //   setReplies(currentArray => [
+  //     ...currentArray,
+  //     {
+  //       id: nextId.current,
+  //       userName: 'wow1984',
+  //       content: reply,
+  //     },
+  //   ]);
+  //   setReply('');
+  //   nextId.current += 1;
+  // };
+  // const deleteBtn = event => {
+  //   const li = event.target.parentElement;
+  //   li.remove();
+  // };
+
+  // // Mockdata 가져오기
+  // useEffect(() => {
+  //   fetch('data/CommentData.json')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setReplies(data);
+  //     });
+  // }, []);
+
+  // feedData 가져오기
+
   return (
     <>
       <nav>
@@ -40,7 +72,18 @@ function MainYoonji() {
         </div>
       </nav>
       <main>
-        <section className="feeds">
+        <div className="main__left">
+          {feed.map(f => (
+            <Feed
+              key={f.id}
+              userName={f.userName}
+              content={f.content}
+              src={f.src}
+              userProfile={f.userProfile}
+            />
+          ))}
+        </div>
+        {/* <section className="feeds">
           <article>
             <div className="user">
               <div className="profile__container">
@@ -78,22 +121,24 @@ function MainYoonji() {
               <div className="feeds__text">
                 <span>syj3367</span> 복순이가 탈출해서 이불에 들어옴
               </div>
+              {/* 리플 들어가는 곳 */}
 
-              <Reply replies={replies} deleteBtn ={deleteBtn} />
+        {/* <Reply replies={replies} deleteBtn={deleteBtn} />
+
               <div className="time">42분 전</div>
-      <form className="reply__input" onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          value={reply}
-          className="reply__input__text"
-          type="text"
-          placeholder="댓글 달기..."
-        />
-        <button className="reply__input__btn">게시</button>
-      </form>
+              <form className="reply__input" onSubmit={onSubmit}>
+                <input
+                  onChange={onChange}
+                  value={reply}
+                  className="reply__input__text"
+                  type="text"
+                  placeholder="댓글 달기..."
+                />
+                <button className="reply__input__btn">게시</button>
+              </form>
             </div>
-          </article>
-        </section>
+          </article> */}
+        {/* </section> */}
         <aside className="main-right">
           <div className="yourId">
             <div className="yourId__profile">
