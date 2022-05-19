@@ -40,7 +40,6 @@ function Feed({ profileSrc, profileId, imgSrc, feedScript }) {
           <img alt="header profile" src={profileSrc} width="32px" />
           <Link to="/main-HaeYongLee" className="feedId">
             <p>{profileId}</p>
-            {/* <p>hey.yong44</p> */}
           </Link>
         </div>
         <div className="feedHeaderEnd">

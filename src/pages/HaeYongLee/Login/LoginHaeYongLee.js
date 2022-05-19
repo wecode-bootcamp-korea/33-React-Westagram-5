@@ -9,7 +9,37 @@ function LoginHaeYongLee() {
 
   const goToMain = () => {
     navigate('/main-HaeYongLee');
+    fetch('http://10.58.6.78:8000/', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'HaeYong',
+        email: id,
+        password: pw,
+        phone_number: '010-1234-5678',
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.access_token) {
+          localStorage.setItem('login-token', response.access_token);
+        }
+        console.log(response);
+        console.log(localStorage);
+      })
+      .then(result => console.log('결과: ', result));
   };
+
+  let token = localStorage.getItem('wtw-token') || '';
+
+  fetch('http://10.58.4.207:8000/users/login', {
+    headers: {
+      Authorization: token,
+    },
+  })
+    .then(response => response.json())
+    .then(response => {
+      console.log(response.data);
+    });
 
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
@@ -22,6 +52,8 @@ function LoginHaeYongLee() {
     const { value } = event.target;
     setPw(value);
   };
+  // 객체로 바꿔서 한번에 정리 가능
+  // const [userInput, setUserInput] = useState({id:””, pw: “”})
 
   const isInputValid = id.includes('@') && pw.length >= 5;
 
