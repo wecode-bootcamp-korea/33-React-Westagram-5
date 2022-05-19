@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CommentOutput from '../CommentOutput/CommentOutput';
 import ReceiveComment from '../ReceiveComment/ReceiveComment';
+// FIXME: styling은 해당 컴포넌트에서
 
 function Feed({ profileSrc, profileId, imgSrc, feedScript }) {
   const [comment, setComment] = useState('');
@@ -31,6 +32,7 @@ function Feed({ profileSrc, profileId, imgSrc, feedScript }) {
     setComment('');
   };
 
+  // FIXME: boolean은 의문형
   const commentValid = comment.length >= 1;
 
   return (
@@ -92,6 +94,7 @@ function Feed({ profileSrc, profileId, imgSrc, feedScript }) {
           <p>맛있어보이네요</p>
         </div>
         <ul className="todo-list">
+          {/* FIXME: CommentOutput? 컴포넌트 명 */}
           <CommentOutput commentArray={commentArray} />
         </ul>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginHaeYongLee.scss';
+// FIXME: common, reset import 위치
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 
@@ -11,8 +12,11 @@ function LoginHaeYongLee() {
     navigate('/main-HaeYongLee');
   };
 
+  //FIXME: 공통된 관심사는 같은 state
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+
+  //FIXME: 구조분해할당 필요 여부
   const handleIdInput = event => {
     const { value } = event.target;
     setId(value);
@@ -25,6 +29,7 @@ function LoginHaeYongLee() {
 
   const isInputValid = id.includes('@') && pw.length >= 5;
 
+  // FIXME : top level className
   return (
     <section className="loginSection">
       <div className="login">
@@ -57,6 +62,7 @@ function LoginHaeYongLee() {
               type="button"
               onClick={goToMain}
               className={isInputValid ? 'buttonLogin' : 'buttonLoginDisabled'}
+              // FIXME: 삼항연산자 true false
               disabled={isInputValid ? false : true}
             >
               로그인

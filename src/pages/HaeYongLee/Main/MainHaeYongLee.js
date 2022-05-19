@@ -4,12 +4,15 @@ import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 import Nav from '../../../components/Nav/Nav';
 import { Link } from 'react-router-dom';
+// FIXME: component 위치
 import Feed from '../../../components/Feed/Feed';
 
 function MainHaeYongLee() {
+  // FIXME: 변수명, 복수, 단수
   const [feed, setFeed] = useState([]);
 
   useEffect(() => {
+    // FIXME: localhost 생략
     fetch('http://localhost:3000/data/feedData.json', {
       method: 'GET',
     })
@@ -24,6 +27,7 @@ function MainHaeYongLee() {
       <Nav />
       <main className="mainHY">
         <div className="feeds">
+          {/* FIXME: 변수명, 구조분해할당 */}
           {feed.map(f => (
             <Feed
               key={f.id}
@@ -34,6 +38,7 @@ function MainHaeYongLee() {
             />
           ))}
         </div>
+        {/* FIXME: className */}
         <div className="main-right">
           <div className="fixedRight">
             <div className="rightMyProfile">
