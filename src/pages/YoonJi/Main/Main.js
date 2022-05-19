@@ -21,14 +21,17 @@ function Main() {
         <div className="container_nav2">
           <img
             className="nav_img"
+            alt="navImg"
             src=" https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
           />
           <img
             className="nav_img"
+            alt="navImg"
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
           />
           <img
             className="nav_img"
+            alt="navImg"
             src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png
       "
           />
@@ -54,12 +57,13 @@ function Main() {
             <div className="feeds_image">
               <img
                 className="feeds_img"
+                alt="feedsImage"
                 src="https://images.unsplash.com/photo-1651232298012-d61ab5437bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
               />
             </div>
             <div className="icon_reaction">
               <div className="reaction_left">
-                <button onclick="Toggle1()" className="heartBtn" id="btn1">
+                <button className="heartBtn" id="btn1">
                   <i className="fa-regular fa-heart" />
                 </button>
                 <i className="fa-regular fa-comment fa-lg" />
@@ -73,6 +77,7 @@ function Main() {
               <div className="like_people">
                 <img
                   className="picture"
+                  alt="pictureImg"
                   src="https://images.unsplash.com/photo-1651522356854-624fcd9dc3da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 />
                 <p>
@@ -94,7 +99,7 @@ function Main() {
                       <span className="point-span userID">justin_beboy</span>
                       푸하하하
                     </span>
-                    <button onclick="Toggle2()" className="heartBtn2" id="btn2">
+                    <button className="heartBtn2" id="btn2">
                       <i className="fa-regular fa-heart" />
                     </button>
                   </li>

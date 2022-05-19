@@ -1,24 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
 .login_ky {
-  body {
-    background-color: #fafafa;
-  }
-
   .westaWrap {
-    display: flex;
-    flex-direction: column;
+    @include kyFlex;
     align-items: center;
     margin: 3.5rem auto;
     padding: 10px 0px;
-    width: 670px;
-    height: 700px;
+    width: 570px;
     border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
 
     .westa {
       background-color: #ffffff;
       font-family: 'Lobster', cursive;
       color: #24292f;
-      font-size: 4.6rem;
+      font-size: 4rem;
       font-weight: 400;
       text-align: center;
       line-height: 4rem;
@@ -31,8 +26,7 @@
   form {
     width: 76%;
     padding: 0 24px;
-    display: flex;
-    flex-direction: column;
+    @include kyFlex;
     .login_id {
       box-sizing: border-box;
       border: 1px solid #dcdcdc;
@@ -42,7 +36,7 @@
       height: 70px;
       font-size: 20px;
       font-weight: 600;
-      color: rgb(180, 180, 180);
+      color: rgb(0, 0, 0);
       background-color: #fafafa;
       &::placeholder {
         color: rgb(180, 179, 179);
@@ -69,26 +63,43 @@
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      margin-bottom: 230px;
+      margin-bottom: 100px;
       border-radius: 5px;
       padding-left: 10px;
       height: 55px;
       background-color: #afdcf9;
-
-      .login_btn1 {
-        font-weight: bold;
-        color: white;
-        font-size: 23px;
-        border: 1px solid transparent;
-        background-color: transparent;
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+      border: 1px solid transparent;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .main_btn2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      margin-bottom: 240px;
+      border-radius: 5px;
+      padding-left: 10px;
+      height: 55px;
+      background-color: #0095f6;
+      font-weight: bold;
+      color: white;
+      font-size: 23px;
+      border: 1px solid transparent;
+      &:hover {
+        cursor: pointer;
       }
     }
   }
 
   a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-    color: #385185;
+    color: rgb(44, 77, 148);
   }
 }

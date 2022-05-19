@@ -1,0 +1,86 @@
+@import '../../styles/variables.scss';
+main {
+  border: 1px #858585;
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
+.westa_article {
+  @include kyFlex;
+  justify-content: flex-start;
+}
+
+header {
+  position: relative;
+}
+
+.profile_article {
+  position: absolute;
+  right: 13.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex: 10;
+  font-weight: 600;
+}
+.more_icon {
+  position: absolute;
+  left: 18em;
+}
+span.name,
+.user_info_img {
+  margin-left: 10px;
+}
+.user_info_img {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main_aside {
+  width: 310px;
+  display: inline-block;
+  position: fixed;
+  background-color: #fafafa;
+  top: 80px;
+}
+.feeds {
+  width: 614px;
+  margin-right: 34px;
+  display: inline-block;
+}
+
+article,
+.section-story,
+.section-recommend {
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+}
+article {
+  margin-bottom: 60px;
+}
+
+.story_section,
+.recommend-section {
+  width: 310px;
+  padding: 14px 16px;
+  overflow-y: hidden;
+}
+
+.story_section {
+  height: 212px;
+  margin-bottom: 20px;
+}
+.recommend_section {
+  height: 180px;
+}
+.story_section {
+  height: 212px;
+  margin-bottom: 20px;
+}
+
+.recommend_section {
+  height: 180px;
+}

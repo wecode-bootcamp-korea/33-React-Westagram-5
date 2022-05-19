@@ -1,26 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../../styles/variables.scss';
 .main_ky {
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    background-color: #fafafa;
-    padding: 0;
-    margin: 0;
-  }
-  p,
-  span {
-    font-size: 14px;
-  }
-
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    list-style-position: inside;
-  }
   /* Nav */
   nav {
     width: 100%;
@@ -112,8 +92,7 @@
   }
 
   .westa_article {
-    display: flex;
-    flex-direction: column;
+    @include kyFlex;
     justify-content: flex-start;
   }
 
@@ -229,7 +208,7 @@
     justify-content: center;
     align-items: center;
   }
-  .heartBtn {
+  .heart_btn {
     background-color: transparent;
     border: none;
     font-size: 1.5rem;
@@ -247,11 +226,11 @@
     transition: 0.1s;
   }
 
-  .heartBtn:hover {
+  .heart_btn :hover {
     cursor: pointer;
   }
 
-  .heartBtn2:hover {
+  .heart_btn2:hover {
     cursor: pointer;
   }
 
@@ -299,9 +278,9 @@
   /*Comments*/
 
   .comment_section {
-    display: flex;
+    @include kyFlex;
     margin-right: 0.3rem;
-    flex-direction: column;
+
     padding: 0.4rem 1rem;
     margin: 0px;
 
@@ -312,21 +291,27 @@
     .fa-regular fa-heart {
       width: 1rem;
     }
+    .comment_text {
+      width: 90%;
+    }
+    .comment_like {
+      margin: 0px;
+      padding: 0px;
+    }
 
-    .heartBtn2 {
+    .heart_btn2 {
       border: 1px solid transparent;
       background-color: transparent;
       margin-left: 24.5rem;
       align-items: center;
     }
-    .commentFormClass {
+    .comment_form_class {
       display: flex;
       border-top: 1px black;
 
       .makeComment {
-        display: flex;
+        @include kyFlex;
         justify-content: space-around;
-        flex-direction: column;
         align-items: center;
         width: 90%;
         margin-bottom: 0.5rem;
@@ -516,8 +501,7 @@
   }
 
   .comment-btn {
-    display: flex;
-    flex-direction: column;
+    @include kyFlex;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -546,7 +530,7 @@
   }
 
   #comment-list > li > button,
-  .heartBtn {
+  .heart_btn {
     border: 1px solid transparent;
     background-color: white;
     font-weight: 600;
