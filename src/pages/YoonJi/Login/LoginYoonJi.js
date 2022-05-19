@@ -1,17 +1,28 @@
 import React from 'react';
 import './LoginYoonJi.scss';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function LoginYoonji() {
+  // FIXME: 문맥별 공백
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-yoonji');
   };
 
-  const [id, setId] = useState('');
+  // FIXME: 공통된 관심사는 하나의 state에
+  // user input
+  // {key: value, key:value}
+  // object
+  // user id save
+
+  const [userInput, setUserInput] = useState({
+    id:"",
+    pw:""
+  })
+
+  // FIXME: refactoring checklist
   const handleIdInput = event => setId(event.target.value);
-  const [pw, setPw] = useState('');
   const handlePwInput = event => setPw(event.target.value);
 
   const isValid = id.includes('@') && pw.length >= 5;
@@ -38,23 +49,31 @@ function LoginYoonji() {
         pw: pw,
       }),
     })
-      .then(response => response.json())
+      .then(response => {
+        if(response.status === 200){
+          return response.json()
+        }else {
+          alter("로그인에 실패했습니다.")
+        }
+      })
       .then(response => {
         if (response.access_token) {
           localStorage.setItem('token', response.access_token);
         }
       });
+    // FIXME: http 성공 여부는 status code
   };
 
   return (
     <>
-      <div className="container">
+      <div className="loginYoonJi">
         <div className="header">Westagram</div>
         <form>
           <input
             onChange={handleIdInput}
             type="text"
             name=""
+            // FIXME: id attribute
             id="userId"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
@@ -68,7 +87,9 @@ function LoginYoonji() {
           <button
             onClick={login}
             className={isValid ? 'btnActive' : ''}
-            disabled={isValid ? false : true}
+            // FIXME: 삼항연산자 true false X
+            // condition ? true value : false value
+            disabled={!isValid}
           >
             로그인
           </button>

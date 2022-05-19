@@ -1,3 +1,4 @@
+// FIXME: common
 * {
   box-sizing: border-box;
 }
@@ -12,28 +13,33 @@
   display: flex;
   justify-content: center;
 }
-.container {
-  margin: 15px;
-  border: 1px solid var(--border-color);
+// FIXME: css 순서, 셀렉터별 공백
+.loginYoonji {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 15px;
+  border: 1px solid var(--border-color);
   flex-direction: column;
   height: 800px;
   width: 750px;
   padding: 50px 0;
   /* header 태그에 적용 안되는 속성이 있다. footer도 마찬가지 */
+
   .header {
     font-size: 90px;
     font-family: 'Lobster', cursive;
     margin-bottom: 130px;
   }
+
+  // FIXME: tag selector 지양
   form {
     display: flex;
     flex-direction: column;
     height: 50%;
     margin-bottom: 200px;
     width: 70%;
+
     input {
       margin-bottom: 10px;
       background-color: var(--background-color);
@@ -41,9 +47,11 @@
       width: 100%;
       height: 70px;
       border-radius: 4px;
+
       &:focus {
         outline: 1px solid blue;
       }
+
       &::placeholder {
         font-size: 20px;
         vertical-align: middle;

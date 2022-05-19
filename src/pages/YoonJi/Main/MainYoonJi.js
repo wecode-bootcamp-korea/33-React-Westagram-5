@@ -4,11 +4,16 @@ import Reply from '../../../components/Nav/Reply';
 
 // import React from "react";
 
+// FIXME: 문맥별 공백
 function MainYoonji() {
   const [reply, setReply] = useState('');
   const [replies, setReplies] = useState([]);
-  const onChange = event => setReply(event.target.value);
-  const onSubmit = event => {
+
+
+  // FIXME: 함수명
+  // 무슨 기능을 하는지, 동사형
+  const saveUserInput = event => setReply(event.target.value);
+  const addReply = event => {
     event.preventDefault();
     if (reply === '') {
       return;
@@ -16,10 +21,14 @@ function MainYoonji() {
     setReplies(currentArray => [...currentArray, reply]);
     setReply('');
   };
+
+  // FIXME: 명령형 코드 X, DOM 조작 지양
   const deleteBtn = event => {
+    // FIMXE: Array.filter method state 조작
     const li = event.target.parentElement;
     li.remove();
   };
+
   return (
     <>
       <nav>
@@ -34,9 +43,10 @@ function MainYoonji() {
           <i className="fas fa-search"></i>
         </div>
         <div className="icon--right">
-          <img src="./images/YoonJi/explore.png" alt="" />
+          {/* FIXME: alt prop */}
+          <img src="./images/YoonJi/explore.png" alt="user" />
           <img src="images/YoonJi/heart.png" alt="" />
-          <img src="images/YoonJi/profile.png" alt="" />
+          <img src="/images/YoonJi/profile.png" alt="" />
         </div>
       </nav>
       <main>
@@ -45,6 +55,7 @@ function MainYoonji() {
             <div className="user">
               <div className="profile__container">
                 <div className="myprofile">
+                  {/* FIXME: 절대경로 */}
                   <img src="./images/YoonJi/face.jpg" alt="신윤지" />
                 </div>
                 <span>Yoonji</span>
@@ -110,6 +121,7 @@ function MainYoonji() {
                 <div className="story__name">스토리</div>
                 <div className="story__view">모두 보기</div>
               </div>
+              {/* FIXME: 반복되는 UI Array.map */}
               <div className="story__profile__box">
                 <div className="story__profile">
                   <div className="story__profile__avartar">
