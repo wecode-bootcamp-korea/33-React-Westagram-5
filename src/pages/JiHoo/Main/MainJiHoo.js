@@ -1,10 +1,16 @@
 import React, { useState, useRef } from 'react';
 import Nav from '../../../components/Nav/Nav';
+// FIXME: 페이지 내에서 사용하는 컴포넌트 위치
 import CommentBox from '../components/CommentBox';
 import './MainJiHoo.scss';
 
 const MainJiHoo = () => {
+  // FIXME: useRef 사용 이유
+  // value
+  // re-render X
   const nextId = useRef(1);
+  // FIXME: 변수명
+  // state ? state change re-render;
   const [value, setValue] = useState('');
   const [comment, setComment] = useState([]);
 
@@ -12,20 +18,34 @@ const MainJiHoo = () => {
     setValue(e.target.value);
   };
 
+  // FIXME: 함수명
   const onSubmit = e => {
     if (value.length > 0) {
-      setComment([
+
+      const newComment = [
         ...comment,
         {
           id: nextId.current,
           text: value,
           name: 'dlwlrma',
         },
-      ]);
+      ];
+
+      setComment(newComment);
+
+      function addComment(prevComment){
+        return [...prevComment, {
+          id: nextId.current,
+          text: value,
+          name: 'dlwlrma',
+        }]
+      }
+      setComment()
       setValue('');
       nextId.current += 1;
     }
     e.preventDefault();
+
   };
   const handleDelete = id => {
     setComment(comment.filter(com => com.id !== id));
@@ -33,6 +53,7 @@ const MainJiHoo = () => {
 
   return (
     <div class="JiHoo">
+    {/* FIXME: class? */}
       <section>
         <Nav />
         <main>
@@ -105,8 +126,10 @@ const MainJiHoo = () => {
               </div>
             </article>
           </div>
+          {/* FIXME: className */}
           <div className="main-right">
             <div className="users">
+              {/* FIXME: 반복되는 UI */}
               <img
                 src="/images/JiHoo/usericon2.PNG"
                 className="storyicon"

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './LoginJiHoo.scss';
 
 function LoginJiHoo() {
+  // FIXME: 공통된 관심사는 같은 state
   const [isId, setIsId] = useState('');
   const [isPassWord, setIsPassWord] = useState('');
 
@@ -12,11 +13,10 @@ function LoginJiHoo() {
   const handlePwInput = e => {
     setIsPassWord(e.target.value);
   };
+
   const isInputValid = isId.includes('@') && isPassWord.length >= 5;
 
-  const isInputValue = () => {
-    return !isInputValid;
-  };
+  // FIXME: 필요없음
 
   const navigate = useNavigate();
   const goToMain = () => {
@@ -25,6 +25,7 @@ function LoginJiHoo() {
 
   return (
     <div>
+      {/* FIXME: body tag */}
       <body>
         <div className="mainBox">
           <div className="loginBox">
@@ -34,6 +35,9 @@ function LoginJiHoo() {
                 type="text"
                 className="id"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
+                // input 창에 안에 들어있는 글자
+                // FIXME: value property
+                value={isId}
                 onChange={handleIdInput}
               />
               <input
@@ -45,7 +49,7 @@ function LoginJiHoo() {
               <button
                 className="login_Btn"
                 onClick={goToMain}
-                disabled={isInputValue()}
+                disabled={!isInputValid}
               >
                 로그인
               </button>
