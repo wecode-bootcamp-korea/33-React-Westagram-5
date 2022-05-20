@@ -33,6 +33,7 @@
             margin-left: 10px;
           }
         }
+
         .search {
           display: flex;
           justify-content: center;
@@ -50,6 +51,7 @@
           width: 139px;
           height: 26px;
           padding-left: 200px;
+
           img {
             width: 30px;
             height: 30px;
@@ -58,6 +60,7 @@
         }
       }
     }
+
     main {
       display: flex;
       justify-content: center;
@@ -68,7 +71,6 @@
       .feeds {
         background-color: white;
         width: 402px;
-
         margin-right: 400px;
         margin-top: 50px;
         margin-bottom: 50px;
@@ -101,6 +103,7 @@
               padding-left: 10px;
               font-weight: bold;
             }
+
             .more {
               padding-left: 275px;
             }
@@ -111,6 +114,7 @@
             height: 500px;
             margin-top: 10px;
           }
+
           .feed {
             .feed_icons {
               display: flex;
@@ -136,6 +140,7 @@
               }
             }
           }
+
           .feed_content {
             font-size: 13px;
 
@@ -143,28 +148,34 @@
               display: flex;
               align-items: center;
               padding-top: 5px;
+
               .user_icon {
                 width: 35px;
                 height: 35px;
               }
             }
           }
+
           .name {
             font-weight: bold;
           }
+
           .comment {
             padding-left: 10px;
+
             ul {
               li {
                 display: flex;
                 justify-content: space-between;
                 font-size: 14px;
                 padding-top: 3px;
+
                 i {
                   position: relative;
                   right: 10px;
                   padding-right: 5px;
                 }
+
                 i:hover {
                   cursor: pointer;
                 }
@@ -189,6 +200,7 @@
               width: 340px;
               border: 0px;
             }
+
             .btn {
               background-color: white;
               height: 30px;
@@ -196,6 +208,7 @@
               border: 0px;
               color: rgb(0, 149, 246);
             }
+
             .btn:hover {
               cursor: pointer;
             }
@@ -203,7 +216,8 @@
         }
       }
     }
-    .main-right {
+
+    .recommendFriend {
       display: flex;
       flex-direction: column;
       width: 300px;
