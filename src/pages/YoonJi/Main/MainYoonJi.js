@@ -1,10 +1,6 @@
 import './MainYoonJi.scss';
-// import { useState, useEffect, useRef } from 'react';
-// import Reply from '../../../components/Nav/Reply';
 import Feed from '../../../components/Nav/Feed';
 import { useState, useEffect } from 'react';
-
-// import React from "react";
 
 function MainYoonji() {
   const [feed, setFeed] = useState([]);
@@ -66,9 +62,9 @@ function MainYoonji() {
           <i className="fas fa-search"></i>
         </div>
         <div className="icon--right">
-          <img src="./images/YoonJi/explore.png" alt="" />
-          <img src="images/YoonJi/heart.png" alt="" />
-          <img src="images/YoonJi/profile.png" alt="" />
+          <img src="/images/YoonJi/explore.png" alt="compass" />
+          <img src="/images/YoonJi/heart.png" alt="heart" />
+          <img src="/images/YoonJi/profile.png" alt="user" />
         </div>
       </nav>
       <main>
@@ -83,66 +79,10 @@ function MainYoonji() {
             />
           ))}
         </div>
-        {/* <section className="feeds">
-          <article>
-            <div className="user">
-              <div className="profile__container">
-                <div className="myprofile">
-                  <img src="./images/YoonJi/face.jpg" alt="신윤지" />
-                </div>
-                <span>Yoonji</span>
-              </div>
-              <div className="user__icon">
-                <i className="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-            <div className="photo">
-              <img src="./images/YoonJi/snake.jpg" alt="신복순" />
-            </div>
-            <div className="reaction__container">
-              <div className="reaction">
-                <div className="reaction__left">
-                  <i className="fas fa-heart"></i>
-                  <i className="far fa-comment"></i>
-                  <i className="far fa-share-square"></i>
-                </div>
-                <div className="reaction__right">
-                  <i className="far fa-bookmark"></i>
-                </div>
-              </div>
-              <div className="like">
-                <div className="like__profile">
-                  <img src="./images/YoonJi/like__profile.jpg" alt="박계영" />
-                </div>
-                <p className="like__text">
-                  <span>Sally</span>님 <span>외 10명</span>이 좋아합니다
-                </p>
-              </div>
-              <div className="feeds__text">
-                <span>syj3367</span> 복순이가 탈출해서 이불에 들어옴
-              </div>
-              {/* 리플 들어가는 곳 */}
-
-        {/* <Reply replies={replies} deleteBtn={deleteBtn} />
-
-              <div className="time">42분 전</div>
-              <form className="reply__input" onSubmit={onSubmit}>
-                <input
-                  onChange={onChange}
-                  value={reply}
-                  className="reply__input__text"
-                  type="text"
-                  placeholder="댓글 달기..."
-                />
-                <button className="reply__input__btn">게시</button>
-              </form>
-            </div>
-          </article> */}
-        {/* </section> */}
         <aside className="main-right">
           <div className="yourId">
             <div className="yourId__profile">
-              <img src="images/YoonJi/wecodeLogo.png" alt="" />
+              <img src="/images/YoonJi/wecodeLogo.png" alt="" />
             </div>
             <div className="yourId__name">
               <div className="yourId__id">wecode_bootcamp</div>
@@ -158,7 +98,7 @@ function MainYoonji() {
               <div className="story__profile__box">
                 <div className="story__profile">
                   <div className="story__profile__avartar">
-                    <img src="images/YoonJi/yumyum.png" alt="" />
+                    <img src="/images/YoonJi/yumyum.png" alt="" />
                   </div>
                   <div className="story__profile__container">
                     <div className="story__profile__id">yumyum</div>
@@ -169,7 +109,7 @@ function MainYoonji() {
               <div className="story__profile__box">
                 <div className="story__profile">
                   <div className="story__profile__avartar">
-                    <img src="images/YoonJi/yumyum.png" alt="" />
+                    <img src="/images/YoonJi/yumyum.png" alt="" />
                   </div>
                   <div className="story__profile__container">
                     <div className="story__profile__id">yumyum</div>
@@ -180,7 +120,7 @@ function MainYoonji() {
               <div className="story__profile__box">
                 <div className="story__profile">
                   <div className="story__profile__avartar">
-                    <img src="images/YoonJi/yumyum.png" alt="" />
+                    <img src="/images/YoonJi/yumyum.png" alt="" />
                   </div>
                   <div className="story__profile__container">
                     <div className="story__profile__id">yumyum</div>
@@ -191,7 +131,7 @@ function MainYoonji() {
               <div className="story__profile__box">
                 <div className="story__profile">
                   <div className="story__profile__avartar">
-                    <img src="images/YoonJi/yumyum.png" alt="" />
+                    <img src="/images/YoonJi/yumyum.png" alt="" />
                   </div>
                   <div className="story__profile__container">
                     <div className="story__profile__id">yumyum</div>

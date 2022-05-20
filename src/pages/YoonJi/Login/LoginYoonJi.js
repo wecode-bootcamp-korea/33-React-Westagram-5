@@ -9,12 +9,20 @@ function LoginYoonji() {
     navigate('/main-yoonji');
   };
 
-  const [id, setId] = useState('');
-  const handleIdInput = event => setId(event.target.value);
-  const [pw, setPw] = useState('');
-  const handlePwInput = event => setPw(event.target.value);
+  const [userInput, setUserInput] = useState({
+    id: '',
+    pw: '',
+  });
+  const handleInput = e => {
+    // const {name, value} = e.target;
+    setUserInput({
+      ...userInput,
+      [e.target.name]: e.target.value,
+      // [name]: value;
+    });
+  };
 
-  const isValid = id.includes('@') && pw.length >= 5;
+  const isValid = userInput.id.includes('@') && userInput.pw.length >= 5;
 
   const login = e => {
     e.preventDefault();
@@ -41,7 +49,11 @@ function LoginYoonji() {
     //     pw: pw,
     //   }),
     // })
-    //   .then(response => response.json())
+    //   .then(response => {
+    //     // json()가 body만 받아와서 두번째 then에서는 status값을 찾을 수 없음
+    //     if (response.ok) {
+    //     return response.json()
+    //   })
     //   .then(response => {
     //     if (response.access_token) {
     //       // localStorage에 토큰 저장
@@ -56,27 +68,25 @@ function LoginYoonji() {
 
   return (
     <>
-      <div className="container">
+      <div className="yoonji-container">
         <div className="header">Westagram</div>
         <form>
           <input
-            onChange={handleIdInput}
+            onChange={handleInput}
             type="text"
-            name=""
-            id="userId"
+            name="id"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
-            onChange={handlePwInput}
+            onChange={handleInput}
             type="password"
-            name=""
-            id="userPwd"
+            name="pw"
             placeholder="비밀번호"
           />
           <button
             onClick={login}
             className={isValid ? 'btnActive' : ''}
-            disabled={isValid ? false : true}
+            disabled={!isValid}
           >
             로그인
           </button>
